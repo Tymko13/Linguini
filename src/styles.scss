@@ -1,11 +1,75 @@
-/* You can add global styles to this file, and also import other style files */
+@use "sass:color";
 
-$primary-color: #3C6347;
-$secondary-color: #82BD96;
+$primary-accent: #3C6347;
+$secondary-accent: #82BD96;
 
-$basic-color: #FFFFFF;
-$basic-secondary-color: #e4ebe7;
+$primary-basic: #FFFFFF;
+$secondary-basic: #EBEAE5;
 
-$text-color: #000000;
+$primary-text: #030303;
+$secondary-text: #FFFFFF;
 
+@mixin button-style($color, $text-color) {
+  background-color: $color;
+  color: $text-color;
 
+  transition: background-color 0.1s ease-in;
+
+  &:hover {
+    background-color: color.adjust($color, $lightness: -15%);
+  }
+}
+
+* {
+  background-color: $primary-basic;
+  color: $primary-text;
+
+  border-radius: 5px;
+}
+
+body, html {
+  background-color: $secondary-basic;
+}
+
+.float-panel {
+  box-shadow: $primary-text 0 10px 15px -15px;
+
+  padding: 1rem;
+}
+
+.basic-btn {
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  @include button-style($primary-basic, $primary-text);
+}
+
+.accent-btn {
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  @include button-style($primary-accent, $secondary-text);
+}
+
+.text-btn {
+  border: none;
+  background-color: transparent;
+  color: $secondary-accent;
+  font-weight: bold;
+  cursor: pointer;
+
+  transition: color 0.1s ease-in;
+  &:hover {
+    color: $primary-accent;
+  }
+}
+
+.input-text {
+  border: solid $primary-accent 1px;
+  padding: 0.5rem;
+}
+
+.highlighted {
+  background-color: $primary-accent;
+  color: $secondary-text;
+}
