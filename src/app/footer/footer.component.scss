@@ -1,0 +1,7 @@
+@use "../../assets/variables" as *;
+
+footer {
+  padding: 0.25rem 0.5rem;
+  border-top: 1px solid $primary-text;
+  text-align: end;
+}
