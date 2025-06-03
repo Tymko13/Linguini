@@ -1,70 +1,74 @@
 @use "sass:color";
-
-$primary-accent: #3C6347;
-$secondary-accent: #82BD96;
-
-$primary-basic: #FFFFFF;
-$secondary-basic: #EBEAE5;
-
-$primary-text: #030303;
-$secondary-text: #FFFFFF;
-
-@mixin button-style($color, $text-color) {
-  background-color: $color;
-  color: $text-color;
-
-  transition: background-color 0.1s ease-in;
-
-  &:hover {
-    background-color: color.adjust($color, $lightness: -15%);
-  }
-}
+@use "./assets/variables.scss" as *;
 
 * {
-  background-color: $primary-basic;
-  color: $primary-text;
-
-  border-radius: 5px;
+  @extend .text-regular;
+  background: transparent;
+  margin: 0;
 }
 
-body, html {
+body, html, app-root {
   background-color: $secondary-basic;
 }
 
-.float-panel {
-  box-shadow: $primary-text 0 10px 15px -15px;
+app-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
+.round-border {
+  border-radius: 5px;
+}
+
+.float-panel {
+  @extend .round-border;
+  box-shadow: $primary-text 0 10px 15px -15px;
   padding: 1rem;
 }
 
-.basic-btn {
-  border: none;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  @include button-style($primary-basic, $primary-text);
-}
+$trans: transparent;
 
-.accent-btn {
-  border: none;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  @include button-style($primary-accent, $secondary-text);
-}
+@mixin button-style($color, $text-color) {
+  @extend .round-border;
+  background-color: $color;
+  color: $text-color;
 
-.text-btn {
-  border: none;
-  background-color: transparent;
-  color: $secondary-accent;
-  font-weight: bold;
-  cursor: pointer;
+  transition: background-color 0.1s ease-in, color 0.1s ease-in;
 
-  transition: color 0.1s ease-in;
   &:hover {
-    color: $primary-accent;
+    @if $color == $trans {
+      color: color.adjust($text-color, $lightness: -15%);
+    }
+    @else {
+      background-color: color.adjust($color, $lightness: -15%);
+    }
   }
 }
 
+.basic-btn {
+  @include button-style($primary-basic, $primary-text);
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.accent-btn {
+  @include button-style($primary-accent, $secondary-text);
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.text-btn {
+  @include button-style($trans, $secondary-accent);
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 .input-text {
+  @extend .round-border;
   border: solid $primary-accent 1px;
   padding: 0.5rem;
 }
@@ -73,3 +77,31 @@ body, html {
   background-color: $primary-accent;
   color: $secondary-text;
 }
+
+.basic {
+  background-color: $primary-basic;
+  color: $primary-text;
+}
+
+.title-regular {
+  font-family: "Balsamiq Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.title-bold {
+  font-family: "Balsamiq Sans", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.text-regular {
+  font-family: "Balsamiq Sans", sans-serif;
+  font-weight: 400;
+}
+
+.text-bold {
+  font-family: "Balsamiq Sans", sans-serif;
+  font-weight: 700;
+}
+

@@ -1,0 +1,28 @@
+@use "../assets/variables" as *;
+
+$sidebar-width: 20rem;
+
+app-sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: $sidebar-width;
+  height: 100vh;
+  background: linear-gradient(to bottom, $primary-accent 0%, $secondary-accent 100%);
+}
+
+#content {
+  margin-left: $sidebar-width;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+main {
+  flex: 1;
+}
