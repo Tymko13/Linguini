@@ -1,0 +1,12 @@
+@use "../../assets/variables" as *;
+@use "sass:color";
+
+$title-color: color.adjust($primary-text, $lightness: 20%);
+
+h1 {
+  padding: 0.5rem 1rem;
+  font-size: 4rem;
+  color: $title-color;
+  border-bottom: 0.1rem solid $primary-text;
+  background-color: $secondary-basic;
+}
