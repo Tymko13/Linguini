@@ -1,11 +1,13 @@
 import {Component, inject} from '@angular/core';
 import {AuthService} from '../_services/auth.service';
 import {RouterLink} from '@angular/router';
+import {NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-sidebar',
   imports: [
-    RouterLink
+    RouterLink,
+    NgIf
   ],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'

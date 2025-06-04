@@ -1,11 +1,18 @@
 <div id="content">
-  <img src="assets/avatars/placeholder.jpg" alt="">
-  <h2>{{authService.getUsername()}}</h2>
-  <nav>
-    <button class="text-btn" routerLink="translate">Translator</button>
-    <button class="text-btn">Texts</button>
-    <button class="text-btn">Tests</button>
-  </nav>
+  <ng-container *ngIf="authService.isLoggedIn(); else login;">
+    <img src="assets/avatars/placeholder.jpg" alt="">
+    <h2>{{ authService.getUsername() }}</h2>
+    <nav>
+      <button class="text-btn" routerLink="translate">Translator</button>
+      <button class="text-btn">Texts</button>
+      <button class="text-btn">Tests</button>
+    </nav>
+  </ng-container>
+  <ng-template #login>
+    <h2>Linguini EDU</h2>
+    <p>Почни вивчати англійську мову прямо зараз із допомогою Linguini EDU!</p>
+    <button class="material-icons text-btn" routerLink="auth">login</button>
+  </ng-template>
 
 </div>
 

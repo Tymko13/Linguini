@@ -5,6 +5,7 @@
   @extend .text-regular;
   background: transparent;
   margin: 0;
+  box-sizing: border-box;
 }
 
 body, html, app-root {
