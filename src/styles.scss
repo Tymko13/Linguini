@@ -8,6 +8,10 @@
   box-sizing: border-box;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  @extend .title-regular;
+}
+
 body, html, app-root {
   background-color: $secondary-basic;
 }
@@ -44,6 +48,10 @@ $trans: transparent;
     @else {
       background-color: color.adjust($color, $lightness: -15%);
     }
+  }
+  &:active {
+    background-color: $color;
+    color: $text-color;
   }
 }
 
@@ -101,12 +109,12 @@ $trans: transparent;
 }
 
 .text-regular {
-  font-family: "Balsamiq Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
   font-weight: 400;
 }
 
 .text-bold {
-  font-family: "Balsamiq Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
   font-weight: 700;
 }
 
