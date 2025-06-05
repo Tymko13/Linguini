@@ -7,12 +7,12 @@
       <button class="text-btn">Texts</button>
       <button class="text-btn">Tests</button>
     </nav>
+    <button id="logout" (click)="authService.logout()" class="material-icons text-btn">logout</button>
   </ng-container>
   <ng-template #login>
     <h2>Linguini EDU</h2>
     <p>Почни вивчати англійську мову прямо зараз із допомогою Linguini EDU!</p>
     <button class="material-icons text-btn" routerLink="auth">login</button>
   </ng-template>
-
 </div>
 

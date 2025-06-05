@@ -1,0 +1,53 @@
+@use '../../assets/variables' as *;
+@use 'sass:color';
+
+#content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  font-size: 32px;
+}
+
+.float-panel, form, label, input {
+  width: 100%;
+}
+
+#form-panel{
+  margin-top: 1em;
+  flex: 1;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  color: color.adjust($primary-text, $lightness: 30%);
+  font-size: 24px;
+  height: 100%;
+
+  input {
+    margin-bottom: 1em;
+    font-size: 26px;
+  }
+}
+
+#form-column {
+  width: 20em;
+  margin-right: 1em;
+  height: 20em;
+  display: flex;
+  flex-direction: column;
+}
+
+#info-column {
+  width: 10em;
+  height: 20em;
+  background: linear-gradient(to top, $primary-accent 0%, $secondary-accent 100%);
+}
+
+button {
+  margin-left: auto;
+  margin-top: auto;
+  font-size: 32px;
+}

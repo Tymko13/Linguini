@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import {BehaviorSubject} from 'rxjs';
+import {BehaviorSubject, from, switchMap} from 'rxjs';
 import {
   Auth, User,
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
-  signOut
+  signOut, updateProfile
 } from '@angular/fire/auth';
 
 @Injectable({
@@ -19,12 +19,16 @@ export class AuthService {
     onAuthStateChanged(this.auth, (user) => this.userSubject.next(user));
   }
 
-  signUp(email: string, password: string) {
-    return createUserWithEmailAndPassword(this.auth, email, password);
+  signUp(email: string, password: string, name: string) {
+    return from(createUserWithEmailAndPassword(this.auth, email, password)).pipe(
+      switchMap((userCredential) =>
+        updateProfile(userCredential.user, { displayName: name }).then(() => userCredential)
+      )
+    );
   }
 
   login(email: string, password: string) {
-    return signInWithEmailAndPassword(this.auth, email, password);
+    return from(signInWithEmailAndPassword(this.auth, email, password));
   }
 
   logout() {
@@ -39,5 +43,5 @@ export class AuthService {
     return this.auth.currentUser;
   }
 
-  getUsername() {return "Username";}
+  getUsername() {return this.currentUser?.displayName ?? "User";}
 }

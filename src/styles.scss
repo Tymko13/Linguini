@@ -66,12 +66,16 @@ $trans: transparent;
   border: none;
   font-weight: bold;
   cursor: pointer;
+  &:disabled {
+    color: color.adjust($primary-text, $lightness: 50%);
+    cursor: default;
+  }
 }
 
 .input-text {
   @extend .round-border;
   border: solid $primary-accent 1px;
-  padding: 0.5rem;
+  padding: 0.3rem 0.5rem;
 }
 
 .highlighted {
