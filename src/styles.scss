@@ -75,7 +75,7 @@ $trans: transparent;
   font-weight: bold;
   cursor: pointer;
   &:disabled {
-    color: color.adjust($primary-text, $lightness: 50%);
+    color: color.adjust($primary-text, $lightness: 80%);
     cursor: default;
   }
 }

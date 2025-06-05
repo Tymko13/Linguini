@@ -1,18 +1,26 @@
 <div id="content">
-  <ng-container *ngIf="authService.isLoggedIn(); else login;">
-    <img src="assets/avatars/placeholder.jpg" alt="">
-    <h2>{{ authService.getUsername() }}</h2>
-    <nav>
-      <button class="text-btn" routerLink="translate">Translator</button>
-      <button class="text-btn">Texts</button>
-      <button class="text-btn">Tests</button>
-    </nav>
-    <button id="logout" (click)="authService.logout()" class="material-icons text-btn">logout</button>
+  <ng-container *ngIf="(authService.user$ | async) !== undefined; else loading">
+    <ng-container *ngIf="authService.isLoggedIn(); else login;">
+      <div class="img-wrapper"><img src="assets/avatars/placeholder.jpg" alt=""></div>
+      <h2>{{ authService.getUsername() }}</h2>
+      <nav>
+        <button class="side-btn" routerLink="translate">Translator</button>
+        <button class="side-btn">Texts</button>
+        <button class="side-btn">Tests</button>
+      </nav>
+      <button id="logout" (click)="onLogout()" class="material-icons text-btn">logout</button>
+    </ng-container>
   </ng-container>
+
+  <ng-template #loading>
+    <div class="spinner"></div>
+  </ng-template>
+
   <ng-template #login>
-    <h2>Linguini EDU</h2>
+    <button class="side-btn" routerLink="translate">Translator</button>
+    <h2 id="ad">Linguini EDU</h2>
     <p>Почни вивчати англійську мову прямо зараз із допомогою Linguini EDU!</p>
-    <button class="material-icons text-btn" routerLink="auth">login</button>
+    <button id="login" class="side-btn" routerLink="auth">Вхід/Реєстрація</button>
   </ng-template>
 </div>
 

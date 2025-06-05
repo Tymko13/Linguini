@@ -12,10 +12,11 @@ import {
   providedIn: 'root'
 })
 export class AuthService {
-  private userSubject = new BehaviorSubject<User | null>(null);
+  private userSubject = new BehaviorSubject<User | null | undefined>(undefined);
   user$ = this.userSubject.asObservable();
 
   constructor(private auth: Auth) {
+
     onAuthStateChanged(this.auth, (user) => this.userSubject.next(user));
   }
 
@@ -32,7 +33,7 @@ export class AuthService {
   }
 
   logout() {
-    return signOut(this.auth);
+    return from(signOut(this.auth));
   }
 
   isLoggedIn() {

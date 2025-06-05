@@ -5,12 +5,23 @@
   flex-direction: column;
   align-items: center;
   height: 100%;
+  width: 100%;
+}
+
+.img-wrapper {
+  position: relative;
+  width: 80%;
+  padding-top: 80%;
+  margin: 1rem;
 }
 
 img {
+  position: absolute;
+  top: 0;
+  left: 0;
   border-radius: 50%;
-  width: 80%;
-  padding: 1rem;
+  width: 100%;
+  height: 100%;
 }
 
 h2 {
@@ -37,6 +48,67 @@ button.text-btn {
   }
 }
 
+.side-btn {
+  width: 100%;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(0,0,0,0.1);
+  color: $secondary-text;
+  border: 0 none transparent;
+  cursor: pointer;
+  margin-top: 0.3rem;
+
+  &::after {
+    content: "ㅤ\279C";
+    opacity: 0;
+    transition: opacity 0.2s ease-in;
+    position: absolute;
+
+  }
+
+  &:hover {
+    background: rgba(0,0,0,0.2);
+    &::after {
+      opacity: 1;
+    }
+
+  }
+
+  &:active {
+    background: rgba(0,0,0,0.1);
+  }
+}
+
 #logout {
   margin-top: auto;
+}
+
+.spinner {
+  border: 10px solid rgba(0, 0, 0, 0.1);
+  border-left-color: $primary-accent;
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  animation: spin 0.8s linear infinite;
+  margin: auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#ad {
+  margin-top: auto;
+}
+
+#login {
+  margin-bottom: auto;
+}
+
+P {
+  color: $secondary-text;
+  text-align: center;
+  font-size: 22px;
 }
