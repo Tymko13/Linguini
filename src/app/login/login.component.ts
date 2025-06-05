@@ -82,7 +82,7 @@ export class LoginComponent {
     return this.reg() ? "Створити акаунт" : "Увійти в акаунт";
   });
   suggestion = computed(() => {
-    return this.reg() ? "Вже маєш акаунт?" : "Ще не маєш акаунта?";
+    return this.reg() ? "Вже маєш свій акаунт?" : "Ще не маєш акаунта?";
   });
   button = computed(() => {
     return this.reg() ? "УВІЙТИ" : "СТВОРИТИ";
