@@ -27,7 +27,7 @@ export class LoginComponent {
 
   constructor() {
     effect(() => {
-      if(this.reg()) {
+      if (this.reg()) {
         this.form.controls.passwordConfirm.setValidators([Validators.required]);
         this.form.controls.username.setValidators([Validators.required]);
         this.form.setValidators(this.passwordsMatch());
@@ -47,31 +47,45 @@ export class LoginComponent {
       const password = control.get('password')?.value;
       const confirm = control.get('passwordConfirm')?.value;
 
-      return password === confirm ? null : { passwordsMismatch: true };
+      return password === confirm ? null : {passwordsMismatch: true};
     };
   }
 
   form = this.fb.group({
     username: ['', Validators.required],
-    email: ['', Validators.required],
+    email: ['', [Validators.required, Validators.email]],
     password: ['', Validators.required],
     passwordConfirm: ['', Validators.required]
   }, {validators: this.passwordsMatch()});
 
   onSubmit() {
     if (this.form.valid) {
-      if(this.reg()) {
+      if (this.reg()) {
         this.authService.signUp(this.form.value.email!, this.form.value.password!, this.form.value.username!)
           .subscribe({
             next: () => this.router.navigate(['home']),
-            error: () => this.toastify.show("Сталась помилка", false)});
-      }
-      else {
+            error: (error) => this.error = this.errorToMessage(error.code)
+          });
+      } else {
         this.authService.login(this.form.value.email!, this.form.value.password!)
           .subscribe({
             next: () => this.router.navigate(['home']),
-            error: () => this.toastify.show("Сталась помилка", false)});
+            error: (error) => this.error = this.errorToMessage(error.code)
+          });
       }
+    }
+  }
+
+  errorToMessage(errorCode: string): string {
+    console.log(errorCode);
+    switch (errorCode) {
+      case 'auth/invalid-email':
+      case 'auth/invalid-credential':
+        return "Пошта або пароль невірні.";
+      case 'auth/email-already-in-use':
+        return 'Акаунт із цією поштою вже існує.'
+      default:
+        return "Сталась неочікувана помилка. Будь ласка спробуйте ще раз пізніше.";
     }
   }
 

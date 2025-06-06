@@ -23,7 +23,7 @@
             <input formControlName="passwordConfirm" class="input-text" type="password">
           </label>
         </ng-container>
-        <p style="color: darkred" *ngIf="error">error</p>
+        <p style="color: darkred" *ngIf="error">{{error}}</p>
         <button [disabled]="form.invalid" class="text-btn">Продовжити</button>
       </form>
     </div>
