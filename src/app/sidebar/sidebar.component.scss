@@ -112,3 +112,9 @@ P {
   text-align: center;
   font-size: 22px;
 }
+
+.active {
+  &::after {
+    opacity: 1;
+  }
+}

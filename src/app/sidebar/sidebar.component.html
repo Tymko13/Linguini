@@ -4,9 +4,9 @@
       <div class="img-wrapper"><img src="assets/avatars/placeholder.jpg" alt=""></div>
       <h2>{{ authService.getUsername() }}</h2>
       <nav>
-        <button class="side-btn" routerLink="translate">Translator</button>
-        <button class="side-btn">Texts</button>
-        <button class="side-btn">Tests</button>
+        <button class="side-btn" routerLink="translate" routerLinkActive="active">Translator</button>
+        <button class="side-btn" routerLink="texts" routerLinkActive="active">Texts</button>
+        <button class="side-btn" routerLink="tests" routerLinkActive="active">Tests</button>
       </nav>
       <button id="logout" (click)="onLogout()" class="material-icons text-btn">logout</button>
     </ng-container>
@@ -17,10 +17,10 @@
   </ng-template>
 
   <ng-template #login>
-    <button class="side-btn" routerLink="translate">Translator</button>
+    <button class="side-btn" routerLink="translate" routerLinkActive="active">Translator</button>
     <h2 id="ad">Linguini EDU</h2>
     <p>Почни вивчати англійську мову прямо зараз із допомогою Linguini EDU!</p>
-    <button id="login" class="side-btn" routerLink="auth">Вхід/Реєстрація</button>
+    <button id="login" class="side-btn" routerLink="auth" routerLinkActive="active">Вхід/Реєстрація</button>
   </ng-template>
 </div>
 

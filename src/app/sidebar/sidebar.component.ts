@@ -1,6 +1,6 @@
 import {Component, inject} from '@angular/core';
 import {AuthService} from '../_auth/auth.service';
-import {Router, RouterLink} from '@angular/router';
+import {Router, RouterLink, RouterLinkActive} from '@angular/router';
 import {AsyncPipe, NgIf} from '@angular/common';
 import {ToastService} from '../_services/toast.service';
 
@@ -9,7 +9,8 @@ import {ToastService} from '../_services/toast.service';
   imports: [
     RouterLink,
     NgIf,
-    AsyncPipe
+    AsyncPipe,
+    RouterLinkActive
   ],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'
