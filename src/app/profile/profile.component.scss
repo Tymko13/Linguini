@@ -17,13 +17,31 @@
 .avatar-section {
   margin-top: 2rem;
   img.profile-avatar {
-    width: 120px;
+    width: 220px;
     border-radius: 50%;
   }
   h2 {
     margin-top: 1rem;
   }
 }
+
+.profile-avatar-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.profile-avatar {
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ccc;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
 
 .buttons button {
   margin: 1rem;

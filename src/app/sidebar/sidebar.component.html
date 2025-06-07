@@ -2,7 +2,7 @@
   <ng-container *ngIf="(authService.user$ | async) !== undefined; else loading">
     <ng-container *ngIf="authService.isLoggedIn(); else login;">
       <div class="img-wrapper" (click)="goToProfile()" style="cursor: pointer;">
-        <img src="assets/avatars/placeholder.jpg" alt="">
+        <img [src]="avatarUrl" alt="User Avatar">
       </div>
 
       <h2>{{ authService.getUsername() }}</h2>
@@ -26,4 +26,3 @@
     <button id="login" class="side-btn" routerLink="auth" routerLinkActive="active">Вхід/Реєстрація</button>
   </ng-template>
 </div>
-
