@@ -38,6 +38,7 @@ export class ProfileComponent implements OnInit {
   }
 
   editAvatar() {
-    alert('Тут буде редагування аватара');
+    this.router.navigate(['/edit-avatar']);
   }
+
 }
