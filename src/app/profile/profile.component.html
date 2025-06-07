@@ -1,0 +1,13 @@
+<div class="profile-container">
+  <button class="back-button" (click)="goBack()">⬅</button>
+
+  <div class="avatar-section">
+    <img src="assets/avatars/default.png" alt="Avatar" class="profile-avatar">
+    <h2>{{ username }}</h2>
+  </div>
+
+  <div class="buttons">
+    <button (click)="editProfile()">Редагувати профіль</button>
+    <button (click)="editAvatar()">Редагувати аватар</button>
+  </div>
+</div>

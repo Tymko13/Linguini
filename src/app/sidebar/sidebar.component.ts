@@ -20,10 +20,15 @@ export class SidebarComponent {
   router = inject(Router);
   toast = inject(ToastService);
 
+  goToProfile() {
+    this.router.navigate(['/profile']);
+  }
+
   onLogout(){
     this.authService.logout().subscribe({
-      next: ()=>{this.router.navigate(['login'])},
-      error:()=>{this.toast.show("УПС, схоже ви тут на завжди!", false)}
+      next: () => { this.router.navigate(['login']) },
+      error: () => { this.toast.show("УПС, схоже ви тут на завжди!", false) }
     });
   }
 }
+
