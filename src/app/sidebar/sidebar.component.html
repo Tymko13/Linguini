@@ -1,7 +1,10 @@
 <div id="content">
   <ng-container *ngIf="(authService.user$ | async) !== undefined; else loading">
     <ng-container *ngIf="authService.isLoggedIn(); else login;">
-      <div class="img-wrapper"><img src="assets/avatars/placeholder.jpg" alt=""></div>
+      <div class="img-wrapper" (click)="goToProfile()" style="cursor: pointer;">
+        <img src="assets/avatars/placeholder.jpg" alt="">
+      </div>
+
       <h2>{{ authService.getUsername() }}</h2>
       <nav>
         <button class="side-btn" routerLink="translate" routerLinkActive="active">Translator</button>

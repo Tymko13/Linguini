@@ -1,0 +1,33 @@
+.profile-container {
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+}
+
+.back-button {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.avatar-section {
+  margin-top: 2rem;
+  img.profile-avatar {
+    width: 120px;
+    border-radius: 50%;
+  }
+  h2 {
+    margin-top: 1rem;
+  }
+}
+
+.buttons button {
+  margin: 1rem;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
