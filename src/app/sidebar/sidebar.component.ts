@@ -26,7 +26,7 @@ export class SidebarComponent {
 
   onLogout(){
     this.authService.logout().subscribe({
-      next: () => { this.router.navigate(['login']) },
+      next: () => { this.router.navigate(['auth']) },
       error: () => { this.toast.show("УПС, схоже ви тут на завжди!", false) }
     });
   }
