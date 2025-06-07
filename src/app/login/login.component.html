@@ -1,36 +1,41 @@
 <div id="content">
   <div id="form-column">
-    <div class="float-panel basic">{{header()}}</div>
+    <div class="float-panel basic">{{ header() }}</div>
     <div id="form-panel" class="float-panel basic">
       <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <ng-container *ngIf="reg()">
           <label>
             Ім'я
-            <input formControlName="username" class="input-text" type="text">
+            <input formControlName="username" [class.invalid]="username.invalid && isTouched(username)"
+                   placeholder="Моє ім'я..." class="input-text" type="text">
           </label>
         </ng-container>
         <label>
           Електронна пошта
-          <input formControlName="email" class="input-text" type="email">
+          <input formControlName="email" [class.invalid]="email.invalid && isTouched(email)"
+                 placeholder="poshta@domain.com" class="input-text" type="email">
         </label>
         <label>
           Пароль
-          <input formControlName="password" class="input-text" type="password">
+          <input formControlName="password" [class.invalid]="password.invalid && isTouched(password)"
+                 placeholder="********" class="input-text" type="password">
         </label>
         <ng-container *ngIf="reg()">
           <label>
             Повторіть пароль
-            <input formControlName="passwordConfirm" class="input-text" type="password">
+            <input formControlName="passwordConfirm"
+                   [class.invalid]="form.hasError('passwordsMismatch') && isTouched(passwordConfirm)"
+                   placeholder="********" class="input-text" type="password">
           </label>
         </ng-container>
-        <p style="color: darkred" *ngIf="error">{{error}}</p>
+        <p style="color: darkred" *ngIf="error">{{ error }}</p>
         <button [disabled]="form.invalid" class="text-btn">Продовжити</button>
       </form>
     </div>
   </div>
   <div id="info-column" class="float-panel highlighted">
     <h2>Привіт!</h2>
-    {{suggestion()}}
-    <button class="text-btn" (click)="reg.set(!reg())">{{button()}}</button>
+    {{ suggestion() }}
+    <button class="text-btn" (click)="reg.set(!reg())">{{ button() }}</button>
   </div>
 </div>

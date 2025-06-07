@@ -59,3 +59,13 @@ form button {
   margin-left: auto;
   margin-top: auto;
 }
+
+.invalid {
+  border: 2px solid $error;
+  background-color: color.adjust($error, $lightness: 42%);
+}
+
+label::before {
+  content: "*";
+  color: $error;
+}

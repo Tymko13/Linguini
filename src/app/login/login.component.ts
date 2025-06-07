@@ -47,7 +47,7 @@ export class LoginComponent {
       const password = control.get('password')?.value;
       const confirm = control.get('passwordConfirm')?.value;
 
-      return password === confirm ? null : {passwordsMismatch: true};
+      return password === confirm && confirm !== '' ? null : {passwordsMismatch: true};
     };
   }
 
@@ -55,8 +55,24 @@ export class LoginComponent {
     username: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],
     password: ['', Validators.required],
-    passwordConfirm: ['', Validators.required]
+    passwordConfirm: ['', [Validators.required, ]]
   }, {validators: this.passwordsMatch()});
+
+  get email() {
+    return this.form.get("email")!;
+  }
+
+  get username() {
+    return this.form.get("username")!;
+  }
+
+  get password() {
+    return this.form.get("password")!;
+  }
+
+  get passwordConfirm() {
+    return this.form.get("passwordConfirm")!;
+  }
 
   onSubmit() {
     if (this.form.valid) {
@@ -101,4 +117,10 @@ export class LoginComponent {
   button = computed(() => {
     return this.reg() ? "УВІЙТИ" : "СТВОРИТИ";
   });
+
+  isTouched(control: AbstractControl) {
+    return control.touched;
+  }
+
+  protected readonly confirm = confirm;
 }
