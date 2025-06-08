@@ -3,6 +3,7 @@ import { Auth, onAuthStateChanged, signInWithEmailAndPassword, createUserWithEma
 import { Firestore, doc, setDoc } from '@angular/fire/firestore';
 import { getStorage, ref } from 'firebase/storage';
 import { from, switchMap } from 'rxjs';
+import {getDownloadURL} from '@angular/fire/storage';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -20,21 +21,21 @@ export class AuthService {
       switchMap(userCredential =>
         updateProfile(userCredential.user, { displayName: name }).then(() => userCredential)
       ),
-      switchMap(userCredential => {
+      switchMap(async userCredential => {
         const userDocRef = doc(this.firestore, 'users', userCredential.user.uid);
 
         const storage = getStorage();
-        const backgroundRef = ref(storage, 'avatar/background/b_blue.PNG');
-        const skinRef = ref(storage, 'avatar/skintones/s_default.PNG');
+        const backgroundUrl = await getDownloadURL(ref(storage, 'avatar/backgrounds/b_blue.PNG'));
+        const skinUrl = await getDownloadURL(ref(storage, 'avatar/skintones/s_default.PNG'));
 
         const defaultUserData = {
           name: name,
           avatar: {
-            a_background: backgroundRef.toString(),
-            b_skin: skinRef.toString(),
-            c_eyes: '',
-            d_clothes: '',
-            e_accessories: ''
+            background: backgroundUrl.toString(),
+            skin: skinUrl.toString(),
+            eyes: '',
+            clothes: '',
+            accessories: ''
           },
           unlocks: []
         };
