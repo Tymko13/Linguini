@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgFor } from '@angular/common';
+import {AvatarService} from '../_services/avatar.service';
 
 @Component({
   selector: 'app-edit-avatar',
@@ -10,13 +11,18 @@ import { NgFor } from '@angular/common';
   styleUrls: ['./edit-avatar.component.scss']
 })
 export class EditAvatarComponent implements OnInit {
-  selectedUrl: string = '';
-  avatarPlaceholders = new Array(12);
+  selectedUrl = [''];
+  avatarPlaceholders = [];
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private avatarService: AvatarService
+  ) {}
 
-  ngOnInit(): void {
-    this.selectedUrl = '';
+  async ngOnInit() {
+    this.avatarService.skintones.subscribe(skintones => {
+      this.selectedUrl = skintones;
+    });
   }
 
   goBack(): void {
