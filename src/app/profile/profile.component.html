@@ -3,11 +3,11 @@
 
   <div class="avatar-section">
     <div class="profile-avatar-wrapper">
-      <img [src]="avatarUrl" class="profile-avatar" alt="Profile Avatar">
+      <img *ngFor="let url of userService.avatar()" [src]="url" class="profile-avatar" alt="Profile Avatar">
     </div>
 
 
-    <h2>{{ username }}</h2>
+    <h2>{{ userService.username() }}</h2>
   </div>
 
 

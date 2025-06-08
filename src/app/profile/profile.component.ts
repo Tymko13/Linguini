@@ -1,33 +1,24 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { AuthService } from '../_auth/auth.service';
-import { ImageService } from '../_services/image.service';
+import {Component, inject } from '@angular/core';
+import {Router} from '@angular/router';
+import {AuthService} from '../_auth/auth.service';
+import {AvatarService} from '../_services/avatar.service';
+import {UserService} from '../_services/user.service';
+import {CommonModule, NgFor} from '@angular/common';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
+  imports: [
+    NgFor,
+    CommonModule
+  ],
   styleUrls: ['./profile.component.scss']
 })
-export class ProfileComponent implements OnInit {
-  avatarUrl: string = '';
-
-  constructor(
-    private router: Router,
-    private auth: AuthService,
-    private imageService: ImageService
-  ) {}
-
-  get username() {
-    return this.auth.getUsername();
-  }
-
-  ngOnInit() {
-    const savedPath = localStorage.getItem('userAvatar') ?? 'skintones/s_default.PNG';
-
-    this.imageService.getAvatar(savedPath).then(url => {
-      this.avatarUrl = url;
-    });
-  }
+export class ProfileComponent {
+  router = inject(Router);
+  auth = inject(AuthService);
+  avatarService = inject(AvatarService);
+  userService = inject(UserService);
 
   goBack() {
     this.router.navigate(['/translate']);
