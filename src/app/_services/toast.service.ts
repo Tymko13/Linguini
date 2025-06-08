@@ -12,7 +12,7 @@ export class ToastService {
       duration: 3000,
       gravity: "bottom",
       position: "center",
-      style: {background: success ? 'green' : 'red'},
+      style: {background: success ? 'darkgreen' : 'darkred'},
       close: true
     }).showToast();
   }
