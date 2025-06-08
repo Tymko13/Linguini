@@ -1,1 +1,20 @@
-<p>translate works!</p>
+<div class="content-wrapper">
+  <div class="translate-navigation">
+    <div class="float-panel highlighted" id="up-left">
+      {{codeToLang(from)}}
+    </div>
+    <button class="highlighted material-icons switch-lang-btn">
+      swap_horiz
+    </button>
+    <div class="float-panel highlighted" id="up-right">
+      {{codeToLang(to)}}
+    </div>
+  </div>
+  <div class="float-panel translate-content">
+    <textarea class="basic input-field"></textarea>
+    <div class="basic translation-field">
+      <p class="word basic" *ngFor="let word of translation">{{word}}</p>
+    </div>
+  </div>
+</div>
+
