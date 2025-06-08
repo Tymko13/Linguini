@@ -1,30 +1,48 @@
-import { Injectable } from '@angular/core';
-import {BehaviorSubject, from, switchMap} from 'rxjs';
-import {
-  Auth, User,
-  createUserWithEmailAndPassword,
-  onAuthStateChanged,
-  signInWithEmailAndPassword,
-  signOut, updateProfile
-} from '@angular/fire/auth';
+import { Injectable, signal, computed, effect } from '@angular/core';
+import { Auth, onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile, signOut, User } from '@angular/fire/auth';
+import { Firestore, doc, setDoc } from '@angular/fire/firestore';
+import { getStorage, ref } from 'firebase/storage';
+import { from, switchMap } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({ providedIn: 'root' })
 export class AuthService {
-  private userSubject = new BehaviorSubject<User | null | undefined>(undefined);
-  user$ = this.userSubject.asObservable();
+  private userSignal = signal<User | null | undefined>(undefined); // undefined: loading, null: not logged in
+  readonly user = computed(() => this.userSignal());
 
-  constructor(private auth: Auth) {
-
-    onAuthStateChanged(this.auth, (user) => this.userSubject.next(user));
+  constructor(private auth: Auth, private firestore: Firestore) {
+    onAuthStateChanged(this.auth, (user) => {
+      this.userSignal.set(user);
+    });
   }
 
   signUp(email: string, password: string, name: string) {
     return from(createUserWithEmailAndPassword(this.auth, email, password)).pipe(
-      switchMap((userCredential) =>
+      switchMap(userCredential =>
         updateProfile(userCredential.user, { displayName: name }).then(() => userCredential)
-      )
+      ),
+      switchMap(userCredential => {
+        const userDocRef = doc(this.firestore, 'users', userCredential.user.uid);
+
+        const storage = getStorage();
+        const backgroundRef = ref(storage, 'avatar/background/b_blue.PNG');
+        const skinRef = ref(storage, 'avatar/skintones/s_default.PNG');
+
+        const defaultUserData = {
+          name: name,
+          avatar: {
+            a_background: backgroundRef.toString(),
+            b_skin: skinRef.toString(),
+            c_eyes: '',
+            d_clothes: '',
+            e_accessories: ''
+          },
+          unlocks: []
+        };
+
+        return from(setDoc(userDocRef, defaultUserData)).pipe(
+          switchMap(() => from([userCredential]))
+        );
+      })
     );
   }
 
@@ -37,12 +55,7 @@ export class AuthService {
   }
 
   isLoggedIn() {
-    return !!this.userSubject.value;
+    return !!this.userSignal();
   }
-
-  get currentUser(): User | null {
-    return this.auth.currentUser;
-  }
-
-  getUsername() {return this.currentUser?.displayName ?? "User";}
 }
+
