@@ -1,51 +1,46 @@
-.profile-container {
-  text-align: center;
-  padding: 2rem;
-  position: relative;
-}
-
-.back-button {
+.save-button {
   position: absolute;
   top: 1rem;
-  left: 1rem;
-  font-size: 1.5rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.avatar-section {
-  margin-top: 2rem;
-  img.profile-avatar {
-    width: 220px;
-    border-radius: 50%;
-  }
-  h2 {
-    margin-top: 1rem;
-  }
-}
-
-.profile-avatar-wrapper {
-  display: flex;
-  justify-content: center;
-  margin: 2rem 0;
-}
-
-.profile-avatar {
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #ccc;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-
-
-
-
-.buttons button {
-  margin: 1rem;
-  padding: 0.5rem 1.5rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
   font-size: 1rem;
   cursor: pointer;
+}
+
+.avatar-category-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+
+  button {
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+
+    &.active {
+      background-color: #4caf50;
+      color: white;
+    }
+  }
+}
+
+.avatar-options {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  img.profile-avatar-option {
+    width: 80px;
+    height: 80px;
+    margin: 0.5rem;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+
+    &:hover {
+      border-color: #4caf50;
+      box-shadow: 0 0 8px rgba(76, 175, 80, 0.8);
+    }
+  }
 }
