@@ -3,10 +3,15 @@
 
   <div class="avatar-section">
     <div class="profile-avatar-wrapper">
-      <img *ngFor="let url of avatarService.avatar"
-           [src]="url"
-           class="profile-avatar"
-           alt="Profile Avatar">
+      <!-- 🟡 Збірний аватар у кружечку -->
+      <div class="avatar-preview">
+        <img *ngIf="avatarService.avatar[0]" [src]="avatarService.avatar[0]" class="layer background">
+        <img *ngIf="avatarService.avatar[1]" [src]="avatarService.avatar[1]" class="layer skin">
+        <img *ngIf="avatarService.avatar[2]" [src]="avatarService.avatar[2]" class="layer eyes">
+        <img *ngIf="avatarService.avatar[3]" [src]="avatarService.avatar[3]" class="layer clothes">
+        <img *ngIf="avatarService.avatar[4]" [src]="avatarService.avatar[4]" class="layer hair">
+        <img *ngIf="avatarService.avatar[5]" [src]="avatarService.avatar[5]" class="layer accessories">
+      </div>
     </div>
 
     <div class="edit-name">

@@ -57,13 +57,13 @@ export class AvatarService {
     ));
   }
 
-  // ✅ Метод для вибору зображення для певної частини
+  // Метод для вибору зображення для певної частини
   setPart(part: string, url: string): void {
     this.selectedParts[part] = url;
     this.saveAvatarState();
   }
 
-  // ✅ Повертає обрані шари для аватара в правильному порядку
+  // Повертає обрані шари для аватара в правильному порядку
   get avatar(): string[] {
     return [
       this.selectedParts['backgrounds'],
@@ -75,12 +75,12 @@ export class AvatarService {
     ].filter(Boolean);
   }
 
-  // ✅ Збереження стану в localStorage
+  // Збереження стану в localStorage
   private saveAvatarState(): void {
     localStorage.setItem('avatarParts', JSON.stringify(this.selectedParts));
   }
 
-  // ✅ Завантаження стану з localStorage
+  // Завантаження стану з localStorage
   private loadAvatarState(): void {
     const saved = localStorage.getItem('avatarParts');
     if (saved) {
