@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../_auth/auth.service';
 import { AvatarService } from '../_services/avatar.service';
 import { UserService } from '../_services/user.service';
+import { ToastService } from '../_services/toast.service';
 import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Observable } from 'rxjs';
@@ -19,6 +20,7 @@ export class ProfileComponent implements OnInit {
   auth = inject(AuthService);
   avatarService = inject(AvatarService);
   userService = inject(UserService);
+  toast = inject(ToastService);
 
   username = this.userService.username();
   editingName = false;
@@ -48,6 +50,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     this.loadOptions('backgrounds');
+    this.userService.initializeDefaultAvatar(); // 👉 встановити дефолтний аватар якщо треба
   }
 
   toggleEditName() {
@@ -69,7 +72,15 @@ export class ProfileComponent implements OnInit {
   }
 
   saveChanges() {
-    this.userService.setUsername(this.username);
+    const trimmed = this.username?.trim();
+    if (!trimmed || trimmed.length === 0) {
+      alert('Name must contain at least one character.');
+      this.editingName = true;
+      return;
+    }
+
+    this.userService.setUsername(trimmed);
+    this.editingName = false;
 
     if (this.selectedParts['backgrounds']) {
       this.userService.setBackground(this.selectedParts['backgrounds']);
@@ -89,6 +100,8 @@ export class ProfileComponent implements OnInit {
     if (this.selectedParts['accessories']) {
       this.userService.setAccessories(this.selectedParts['accessories']);
     }
+
+    this.toast.show('Changes saved successfully!', true);
   }
 
   goBack() {

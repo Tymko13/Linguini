@@ -86,4 +86,19 @@ export class UserService {
       updateDoc(this.userRef()!, { 'avatar.accessories': accessoriesUrl });
     }
   }
+
+  initializeDefaultAvatar() {
+    const ref = this.userRef();
+    const currentAvatar = this.userData()?.avatar;
+
+    if (ref && (!currentAvatar || !currentAvatar.background || !currentAvatar.skin)) {
+      updateDoc(ref, {
+        avatar: {
+          background: 'https://firebasestorage.googleapis.com/v0/b/angular-linguini.appspot.com/o/avatar%2Fbackgrounds%2Fb_grey.PNG?alt=media',
+          skin: 'https://firebasestorage.googleapis.com/v0/b/angular-linguini.appspot.com/o/avatar%2Fskintones%2Fs_default.PNG?alt=media'
+        }
+      });
+    }
+  }
+
 }
