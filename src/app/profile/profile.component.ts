@@ -35,6 +35,8 @@ export class ProfileComponent implements OnInit {
   selectedPart: string = 'backgrounds';
   options$: Observable<string[]> | null = null;
 
+  selectedParts: Record<string, string> = {}; // локальні зміни для збереження
+
   private avatarGetters: Record<string, () => Observable<string[]>> = {
     backgrounds: () => this.avatarService.backgrounds,
     skintones: () => this.avatarService.skintones,
@@ -43,7 +45,6 @@ export class ProfileComponent implements OnInit {
     clothes: () => this.avatarService.clothes,
     accessories: () => this.avatarService.accessories,
   };
-
 
   ngOnInit() {
     this.loadOptions('backgrounds');
@@ -60,16 +61,34 @@ export class ProfileComponent implements OnInit {
 
   loadOptions(partKey: string) {
     this.options$ = this.avatarGetters[partKey]();
-
   }
 
   selectImage(url: string) {
-    this.avatarService.setPart(this.selectedPart, url);
+    this.avatarService.setPart(this.selectedPart, url); // локальне оновлення для профілю
+    this.selectedParts[this.selectedPart] = url;        // збереження для кнопки Save
   }
 
   saveChanges() {
     this.userService.setUsername(this.username);
 
+    if (this.selectedParts['backgrounds']) {
+      this.userService.setBackground(this.selectedParts['backgrounds']);
+    }
+    if (this.selectedParts['skintones']) {
+      this.userService.setSkin(this.selectedParts['skintones']);
+    }
+    if (this.selectedParts['eyes']) {
+      this.userService.setEyes(this.selectedParts['eyes']);
+    }
+    if (this.selectedParts['hair']) {
+      this.userService.setHair(this.selectedParts['hair']);
+    }
+    if (this.selectedParts['clothes']) {
+      this.userService.setClothes(this.selectedParts['clothes']);
+    }
+    if (this.selectedParts['accessories']) {
+      this.userService.setAccessories(this.selectedParts['accessories']);
+    }
   }
 
   goBack() {

@@ -37,6 +37,7 @@ export class UserService {
         avatar.background,
         avatar.skin,
         avatar.eyes,
+        avatar.hair,
         avatar.clothes,
         avatar.accessories
       ];
@@ -72,6 +73,13 @@ export class UserService {
       updateDoc(this.userRef()!, { 'avatar.clothes': clothesUrl });
     }
   }
+
+  setHair(hairUrl: string) {
+    if (this.userRef()) {
+      updateDoc(this.userRef()!, { 'avatar.hair': hairUrl });
+    }
+  }
+
 
   setAccessories(accessoriesUrl: string) {
     if (this.userRef()) {
