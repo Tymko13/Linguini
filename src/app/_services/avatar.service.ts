@@ -42,4 +42,15 @@ export class AvatarService {
       Promise.all(listResults.items.map(item => getDownloadURL(item))))
     );
   }
+
+  get hair() {
+    const hairRef = ref(this.storage, 'avatar/hair/');
+    return from(
+      listAll(hairRef).then(listResults =>
+        Promise.all(listResults.items.map(item => getDownloadURL(item)))
+      )
+    );
+  }
+
+
 }
