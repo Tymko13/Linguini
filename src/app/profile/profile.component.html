@@ -3,7 +3,7 @@
     <div class="avatar-preview">
       <img *ngFor="let part of userService.avatar(); let i = index" [src]="editedAvatar[i] || part" class="layer background" alt="">
     </div>
-    <input [defaultValue]="userService.username() || ''"  class="input-text" />
+    <input [defaultValue]="userService.username() || ''" [(ngModel)]="editedUsername"  class="input-text" />
     <button class="accent-btn save-button" (click)="saveChanges()">Save changes</button>
   </div>
   <div class="shop">

@@ -27,9 +27,9 @@ export class ProfileComponent implements OnInit {
   toast = inject(ToastService);
 
   ngOnInit() {
-    setTimeout(() => this.editedUsername.set(this.userService.username()));
+    setTimeout(() => this.editedUsername = this.userService.username());
   }
-  editedUsername = signal('');
+  editedUsername = '';
   editedAvatar = [
     '',
     '',
@@ -72,7 +72,7 @@ export class ProfileComponent implements OnInit {
   }
 
   saveChanges() {
-    const trimmed = this.editedUsername().trim();
+    const trimmed = this.editedUsername.trim();
     if (trimmed !== this.userService.username()) {
       this.userService.setUsername(trimmed);
     }
