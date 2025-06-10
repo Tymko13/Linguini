@@ -1,41 +1,28 @@
-<div class="edit-name">
-  <div class="save-button-wrapper">
-    <button class="save-button-inline" (click)="saveChanges()">Save changes</button>
-  </div>
-
-  <label>Change profile name:</label>
-  <span *ngIf="!editingName" (click)="toggleEditName()">{{ username }}</span>
-  <input *ngIf="editingName"
-         [(ngModel)]="username"
-         (blur)="toggleEditName()" type="text" />
-</div>
-
 <div class="edit-avatar">
-  <label>Change avatar:</label>
-
-  <div class="avatar-preview">
-    <img *ngIf="avatarService.avatar[0]" [src]="avatarService.avatar[0]" class="layer background">
-    <img *ngIf="avatarService.avatar[1]" [src]="avatarService.avatar[1]" class="layer skin">
-    <img *ngIf="avatarService.avatar[2]" [src]="avatarService.avatar[2]" class="layer eyes">
-    <img *ngIf="avatarService.avatar[3]" [src]="avatarService.avatar[3]" class="layer clothes">
-    <img *ngIf="avatarService.avatar[4]" [src]="avatarService.avatar[4]" class="layer hair">
-    <img *ngIf="avatarService.avatar[5]" [src]="avatarService.avatar[5]" class="layer accessories">
+  <div class="avatar-show">
+    <div class="avatar-preview">
+      <img *ngFor="let part of userService.avatar(); let i = index" [src]="editedAvatar[i] || part" class="layer background" alt="">
+    </div>
+    <input [defaultValue]="userService.username() || ''"  class="input-text" />
+    <button class="accent-btn save-button" (click)="saveChanges()">Save changes</button>
   </div>
+  <div class="shop">
+    <div class="avatar-category-buttons">
+      <button *ngFor="let button of buttons; let i = index"
+              [class.active]="selectedPart() === i"
+              (click)="selectedPart.set(i)"
+              class="text-btn">
+        {{ button }}
+      </button>
+    </div>
 
-  <div class="avatar-category-buttons">
-    <button *ngFor="let part of parts"
-            [class.active]="selectedPart === part.key"
-            (click)="selectPart(part.key)">
-      {{ part.label }}
-    </button>
-  </div>
-
-  <div class="avatar-options">
-    <ng-container *ngIf="options$ | async as options">
-      <img *ngFor="let option of options"
-           [src]="option"
-           (click)="selectImage(option)"
-           class="profile-avatar-option">
-    </ng-container>
+    <div class="avatar-options">
+      <ng-container *ngIf="options() as options">
+        <img *ngFor="let option of options | async"
+             [src]="option"
+             (click)="select(option)"
+             class="profile-avatar-option" alt="">
+      </ng-container>
+    </div>
   </div>
 </div>

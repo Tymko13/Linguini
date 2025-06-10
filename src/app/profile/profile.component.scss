@@ -1,31 +1,13 @@
-.save-button {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-.save-button-wrapper {
-  margin-bottom: 1rem;
-}
-
-.save-button-inline {
-  padding: 0.5rem 1.2rem;
-  font-size: 1rem;
-  cursor: pointer;
-}
+@use '../../assets/variables' as *;
 
 .avatar-preview {
   position: relative;
-  width: 220px;
-  height: 220px;
+  width: 20rem;
+  height: 20rem;
   margin: 1.5rem auto;
   border-radius: 50%;
   overflow: hidden;
-  background-color: #eee;
-  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
 
 .avatar-preview .layer {
@@ -36,41 +18,74 @@
 }
 
 
-
 .avatar-category-buttons {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   margin: 1rem 0;
+  border-bottom: 3px solid $primary-accent;
+  width: 100%;
 
   button {
-    margin: 0.5rem;
     padding: 0.5rem 1rem;
     cursor: pointer;
+    font-size: 1.5rem;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 
     &.active {
-      background-color: #4caf50;
-      color: white;
+      background-color: $primary-accent;
+      color: $secondary-text;
     }
   }
 }
 
 .avatar-options {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   flex-wrap: wrap;
+  width: 100%;
 
   img.profile-avatar-option {
-    width: 80px;
-    height: 80px;
-    margin: 0.5rem;
+    width: 24%;
+    margin-right: 1%;
+    margin-bottom: 1%;
     border-radius: 50%;
-    border: 2px solid transparent;
     cursor: pointer;
+    transition: box-shadow 0.1s ease-in;
+    border: 2px solid $primary-text;
 
     &:hover {
-      border-color: #4caf50;
-      box-shadow: 0 0 8px rgba(76, 175, 80, 0.8);
+      box-shadow: 0 0 20px -10px $primary-text;
     }
   }
+}
+
+.edit-avatar {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  input {
+    width: 15rem;
+    font-size: 1.5rem ;
+    text-align: center;
+  }
+  padding: 1rem 2rem;
+}
+
+.avatar-show {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.shop {
+  margin-left: 24rem;
+}
+
+
+.save-button {
+  font-size: 1.5rem;
+  margin-top: 1rem;
 }
