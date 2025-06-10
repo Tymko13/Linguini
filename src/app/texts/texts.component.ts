@@ -26,6 +26,31 @@ export class TextsComponent {
           "translation": "дезайнер",
           "sentence1": "Christian Dior was a famous fashion",
           "sentence2": "from France."
+        },
+        {
+          "word": "",
+          "translation": "",
+          "sentence1": "",
+          "sentence2": ""
+        }
+      ]
+    },
+        {
+      "name": "",
+      "title": "",
+      "text" : "",
+      "words": [
+        {
+          "word": "",
+          "translation": "",
+          "sentence1": "",
+          "sentence2": ""
+        },
+        {
+          "word": "",
+          "translation": "",
+          "sentence1": "",
+          "sentence2": ""
         }
       ]
     }
