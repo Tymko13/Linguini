@@ -6,6 +6,10 @@
     </div>
   </ng-container>
   <ng-template #showTopic>
+    <div class="navigation">
+      <button class="material-icons accent-btn" (click)="currentTopic.set(null)">arrow_backward</button>
+      <button class="accent-btn" (click)="learn()" [disabled]="disableLearning()">Start Learning</button>
+    </div>
     <div style="margin: 0 3rem 1rem 3rem" class="float-panel basic">
       <p class="title-regular" style="font-size: 2rem; margin-bottom: 1rem;">{{currentTopic()?.title}}</p>
       <p style="font-size: 1.5rem">{{currentTopic()?.text}}</p>

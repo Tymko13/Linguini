@@ -1,6 +1,7 @@
 import {computed, effect, Injectable, signal} from '@angular/core';
 import {AuthService} from '../_auth/auth.service';
-import {doc, docData, Firestore, updateDoc} from '@angular/fire/firestore';
+import {doc, docData, Firestore, updateDoc, arrayUnion} from '@angular/fire/firestore';
+import {Topic} from '../_models/topic';
 
 @Injectable({
   providedIn: 'root'
@@ -32,7 +33,7 @@ export class UserService {
 
   avatar = computed(() => {
     const avatar = this.userData()?.avatar ?? null;
-    if(avatar) {
+    if (avatar) {
       return [
         avatar.background,
         avatar.skin,
@@ -44,45 +45,60 @@ export class UserService {
     } else return [];
   });
 
+  words = computed(() => {
+    return this.userData()?.words ?? null;
+  });
+
+  topics = computed(() => {
+    return this.userData()?.topics ?? null;
+  });
+
   setUsername(username: string) {
-    if(this.userRef()) {
+    if (this.userRef()) {
       updateDoc(this.userRef()!, {name: username});
     }
   }
 
   setBackground(backgroundUrl: string) {
     if (this.userRef()) {
-      updateDoc(this.userRef()!, { 'avatar.background': backgroundUrl });
+      updateDoc(this.userRef()!, {'avatar.background': backgroundUrl});
     }
   }
 
   setSkin(skinUrl: string) {
     if (this.userRef()) {
-      updateDoc(this.userRef()!, { 'avatar.skin': skinUrl });
+      updateDoc(this.userRef()!, {'avatar.skin': skinUrl});
     }
   }
 
   setEyes(eyesUrl: string) {
     if (this.userRef()) {
-      updateDoc(this.userRef()!, { 'avatar.eyes': eyesUrl });
+      updateDoc(this.userRef()!, {'avatar.eyes': eyesUrl});
     }
   }
 
   setClothes(clothesUrl: string) {
     if (this.userRef()) {
-      updateDoc(this.userRef()!, { 'avatar.clothes': clothesUrl });
+      updateDoc(this.userRef()!, {'avatar.clothes': clothesUrl});
     }
   }
 
   setHair(hairUrl: string) {
     if (this.userRef()) {
-      updateDoc(this.userRef()!, { 'avatar.hair': hairUrl });
+      updateDoc(this.userRef()!, {'avatar.hair': hairUrl});
     }
   }
 
   setAccessories(accessoriesUrl: string) {
     if (this.userRef()) {
-      updateDoc(this.userRef()!, { 'avatar.accessories': accessoriesUrl });
+      updateDoc(this.userRef()!, {'avatar.accessories': accessoriesUrl});
+    }
+  }
+
+  addWords(topic: Topic) {
+    if (this.userRef()) {
+      updateDoc(this.userRef()!, {topics: arrayUnion(topic.name)});
+      updateDoc(this.userRef()!, {words: arrayUnion(...topic.words)});
     }
   }
 }
