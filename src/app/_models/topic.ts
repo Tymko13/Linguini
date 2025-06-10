@@ -1,5 +1,4 @@
-class Learn {
-}
+import {Learn} from './learn';
 
 export interface Topic {
   name: string;

@@ -1,1 +1,20 @@
-<p>texts works!</p>
+<div  id="content-wrapper">
+  <ng-container *ngIf="!currentTopic(); else showTopic">
+    <div (click)="currentTopic.set(topic)" class="float-panel highlighted topic" *ngFor="let topic of testService.topics">
+      {{topic.name}}
+      <div class="material-icons">arrow_forward</div>
+    </div>
+  </ng-container>
+  <ng-template #showTopic>
+    <div style="margin: 0 3rem 1rem 3rem" class="float-panel basic">
+      <p class="title-regular" style="font-size: 2rem; margin-bottom: 1rem;">{{currentTopic()?.title}}</p>
+      <p style="font-size: 1.5rem">{{currentTopic()?.text}}</p>
+    </div>
+    <div style="width: 100%; margin: 0 3rem" class="float-panel basic">
+      <p style="font-size: 1.5rem;" *ngFor="let word of currentTopic()?.words">
+        {{word.word}} ({{word.translation}}) - {{word.definition}}
+      </p>
+    </div>
+  </ng-template>
+</div>
+

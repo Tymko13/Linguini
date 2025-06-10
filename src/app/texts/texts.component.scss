@@ -1,0 +1,40 @@
+@use '../../assets/variables.scss' as *;
+@use 'sass:color';
+
+#content-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 2rem;
+}
+
+.topic {
+  aspect-ratio: 1 / 1;
+  width: 19%;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 1.5rem;
+  div {
+    font-size: 2rem;
+  }
+  position: relative;
+  @for $i from 1 through 10 {
+    &:nth-of-type(#{$i}) {
+      top: #{($i - 1)*2}rem;
+    }
+  }
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+  &:hover {
+    transform: perspective(600px) rotateX(5deg) rotateY(-5deg);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  }
+  cursor: pointer;
+}
