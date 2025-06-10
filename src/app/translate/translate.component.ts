@@ -33,7 +33,7 @@ export class TranslateComponent {
   selectedWord = this.debouncedValue;
   constructor() {
     this.searchChanged
-      .pipe(debounceTime(300), takeUntil(this.destroy$))
+      .pipe(debounceTime(500), takeUntil(this.destroy$))
       .subscribe((term) => {
         this.debouncedValue.set(term);
         console.log('Debounced value:', term);
@@ -51,11 +51,6 @@ export class TranslateComponent {
 
   onSearchChange(value: string) {
     this.searchChanged.next(value);
-  }
-
-  ngOnDestroy() {
-    this.destroy$.next();
-    this.destroy$.complete();
   }
 
   codeToLang(code: string): string {

@@ -105,4 +105,6 @@
 .custom-input {
   background-color: color.adjust($primary-accent, $lightness: 10%);
   font-size: 1.2rem;
+  margin-left: 1rem;
+  color: $secondary-text;
 }
