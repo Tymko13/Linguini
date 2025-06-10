@@ -10,7 +10,7 @@ import { ProfileComponent } from './profile/profile.component';
 
 export const routes: Routes = [
   {path: 'home', component: HomeComponent, canActivate: [authGuard]},
-  {path: 'translate', component: TranslateComponent},
+  {path: 'dictionary', component: TranslateComponent},
   {path: 'profile', component: ProfileComponent, canActivate: [authGuard] },
   {path: 'auth', component: LoginComponent},
   {path: 'texts', component: TextsComponent},

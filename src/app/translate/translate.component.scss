@@ -1,5 +1,9 @@
+@use '../../assets/variables' as *;
+@use 'sass:color';
+
 .content-wrapper {
-  margin: 2rem 5rem;
+  margin: 1.5rem 3rem;
+  height: 100%;
 }
 
 .translate-navigation, .translate-content {
@@ -10,23 +14,95 @@
   div, textarea {
     resize: none;
     border-radius: 0;
-    border: none;
     flex: 1;
   }
 }
 
 .translate-content{
   height: 20rem;
+  margin-bottom: 1.5rem;
 }
 
 .translate-navigation {
   height: 3rem;
+
+  div {
+    display: flex;
+    height: 100%;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 0 0 1rem;
+  }
 }
 
 #up-left {
   border-radius: 5px 0 0 0;
+  font-size: 1.2rem;
 }
 
 #up-right {
   border-radius: 0 5px 0 0;
+  font-size: 1.2rem;
+}
+
+#down-left {
+  border-radius:0 0 0 5px ;
+}
+
+#down-right {
+  border-radius: 0 0 5px 0;
+}
+
+.input-field, .translation-field {
+  padding: 1rem;
+  font-size: 1.3rem ;
+}
+
+.input-field {
+  outline: none;
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
+  border-right: 1px solid $primary-text;
+  &:focus {
+    border-right: none;
+    outline: $secondary-accent solid 2px;
+  }
+  z-index: 1;
+}
+
+.switch-lang-btn {
+  border: none;
+  font-size: 2rem;
+  transition: background-color 0.1s ease-in;
+  cursor: pointer;
+
+  &:hover {
+    background-color: color.adjust($primary-accent, $lightness: 10%);
+  }
+}
+
+.word {
+  display: inline-block;
+  margin-right: 0.3rem;
+  cursor: pointer;
+  transition: color 0.1s ease-in;
+
+  &:hover {
+    color: color.adjust($primary-text, $lightness: 50%);
+  }
+
+  &.selected {
+    color: $secondary-accent;
+    cursor: default;
+  }
+
+  #dictionary {
+    background-color: $secondary-accent;
+  }
+}
+
+.custom-input {
+  background-color: color.adjust($primary-accent, $lightness: 10%);
+  font-size: 1.2rem;
 }

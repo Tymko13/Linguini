@@ -1,20 +1,25 @@
 <div class="content-wrapper">
-  <div class="translate-navigation">
-    <div class="float-panel highlighted" id="up-left">
-      {{codeToLang(from)}}
-    </div>
-    <button class="highlighted material-icons switch-lang-btn">
-      swap_horiz
-    </button>
-    <div class="float-panel highlighted" id="up-right">
-      {{codeToLang(to)}}
-    </div>
+<!--  <div class="translate-navigation">-->
+<!--    <div class="float-panel highlighted" id="up-left">-->
+<!--      {{codeToLang(from)}}-->
+<!--    </div>-->
+<!--    <button class="highlighted material-icons switch-lang-btn" (click)="switchLang()">-->
+<!--      swap_horiz-->
+<!--    </button>-->
+<!--    <div class="float-panel highlighted" id="up-right">-->
+<!--      {{codeToLang(to)}}-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="float-panel translate-content">-->
+<!--    <textarea class="basic input-field" id="down-left" placeholder="Пишіть щоб перекласти..."></textarea>-->
+<!--    <div class="basic translation-field" id="down-right">-->
+<!--      <p class="word basic" *ngFor="let word of translation" (click)="selectedWord.set(word)" [class.selected]="selectedWord()===word">{{word}}</p>-->
+<!--    </div>-->
+<!--  </div>-->
+  <div class="float-panel highlighted" style="margin-bottom: 1rem; font-size: 1.2rem;">Enter a word:
+    <input class="input-text custom-input" [ngModel]="searchTerm" (ngModelChange)="onSearchChange($event)" type="text">
   </div>
-  <div class="float-panel translate-content">
-    <textarea class="basic input-field"></textarea>
-    <div class="basic translation-field">
-      <p class="word basic" *ngFor="let word of translation">{{word}}</p>
-    </div>
-  </div>
+  <div *ngIf="dictWord()" class="float-panel basic" id="dictionary" [innerHTML]="getDefinition()"></div>
+  <div class="float-panel basic" *ngIf="selectedWord() && !dictWord()">Definition of {{selectedWord()}} was not found.</div>
 </div>
 
