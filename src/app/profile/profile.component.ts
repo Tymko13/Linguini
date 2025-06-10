@@ -27,7 +27,7 @@ export class ProfileComponent implements OnInit {
   toast = inject(ToastService);
 
   ngOnInit() {
-    setTimeout(() => this.editedUsername = this.userService.username());
+    setTimeout(() => this.editedUsername = this.userService.username(), 1000);
   }
   editedUsername = '';
   editedAvatar = [
