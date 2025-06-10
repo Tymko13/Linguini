@@ -24,12 +24,14 @@ export class TextsComponent {
         {
           "word": "designer",
           "translation": "дезайнер",
+          "definition": "a person who creates clothes or fashion items",
           "sentence1": "Christian Dior was a famous fashion",
           "sentence2": "from France."
         },
         {
           "word": "",
           "translation": "",
+          "definition": "",
           "sentence1": "",
           "sentence2": ""
         }
@@ -43,12 +45,14 @@ export class TextsComponent {
         {
           "word": "",
           "translation": "",
+          "definition": "",
           "sentence1": "",
           "sentence2": ""
         },
         {
           "word": "",
           "translation": "",
+          "definition": "",
           "sentence1": "",
           "sentence2": ""
         }
