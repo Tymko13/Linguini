@@ -16,7 +16,7 @@
     </div>
     <div style="width: 100%; margin: 0 3rem" class="float-panel basic">
       <p style="font-size: 1.5rem;" *ngFor="let word of currentTopic()?.words">
-        {{word.word}} ({{word.translation}}) - {{word.definition}}
+        <b style="font-weight: bold;">{{word.word}} ({{word.translation}})</b> - {{word.definition}}
       </p>
     </div>
   </ng-template>
