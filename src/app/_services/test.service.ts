@@ -569,5 +569,1013 @@ export class TestService {
       }
     ]
   }
+  {
+    "name": "Education 1",
+    "title": "Education is the key",
+    "text": "Lina always loved learning. At primary school, she enjoyed reading stories. In secondary school, she studied math, science, and history, but her favorite subject was English. Her teachers encouraged her to think critically and ask questions. Now she’s at university, studying education. She wants to become a teacher and improve how children learn. She believes in skills-based teaching, not just exams. Her course includes theory, practice, and critical thinking. Lina is also taking online courses in child psychology and inclusive education. She often writes essays and gives presentations in class. Her goal is to build confidence and teamwork in her future students. To her, education is not just about facts — it’s about helping others grow.",
+    "words": [
+      {
+        "word": "education",
+        "translation": "освіта",
+        "definition": "the process of learning and teaching",
+        "sentence1": "__________",
+        "sentence2": "helps people learn, grow, and develop."
+      },
+      {
+        "word": "primary school",
+        "translation": "початкова школа",
+        "definition": "a place where children aged 6–11 learn",
+        "sentence1": "In",
+        "sentence2": ", students are 6 to 11 years old."
+      },
+      {
+        "word": "secondary school",
+        "translation": "середня школа",
+        "definition": "school for students aged 12–18",
+        "sentence1": "Before university, I studied at a local",
+        "sentence2": "."
+      },
+      {
+        "word": "subject",
+        "translation": "шкільний предмет",
+        "definition": "something you learn in school like math or art",
+        "sentence1": "This year, I’ll study a new",
+        "sentence2": "— geography."
+      },
+      {
+        "word": "math",
+        "translation": "математика",
+        "definition": "understanding numbers and calculations",
+        "sentence1": "We learned new formulas in our",
+        "sentence2": "lesson today."
+      },
+      {
+        "word": "science",
+        "translation": "природничі науки",
+        "definition": "the study of the world and nature through experiments",
+        "sentence1": "She enjoyed doing experiments in",
+        "sentence2": "class."
+      },
+      {
+        "word": "history",
+        "translation": "історія",
+        "definition": "the study of past events",
+        "sentence1": "I love learning about the past in my",
+        "sentence2": "class."
+      },
+      {
+        "word": "teacher",
+        "translation": "вчитель",
+        "definition": "someone who helps others learn",
+        "sentence1": "Our",
+        "sentence2": "asked great questions and made us think."
+      },
+      {
+        "word": "skills",
+        "translation": "навички",
+        "definition": "useful ability like writing or teamwork",
+        "sentence1": "You need strong communication",
+        "sentence2": "to work in teams."
+      },
+      {
+        "word": "exams",
+        "translation": "іспити",
+        "definition": "a test to measure knowledge",
+        "sentence1": "We take our final",
+        "sentence2": "in June every year."
+      },
+      {
+        "word": "course",
+        "translation": "курс",
+        "definition": "a series of lessons on a topic",
+        "sentence1": "I’m taking an online",
+        "sentence2": "about psychology."
+      },
+      {
+        "word": "theory",
+        "translation": "теорія",
+        "definition": "learning facts and ideas without practice",
+        "sentence1": "The course includes both",
+        "sentence2": "and hands-on activities."
+      },
+      {
+        "word": "practice",
+        "translation": "практика",
+        "definition": "learning by doing something",
+        "sentence1": "We did a lot of",
+        "sentence2": "in the lab with real tools."
+      },
+      {
+        "word": "critical thinking",
+        "translation": "критичне мислення",
+        "definition": "the ability to analyze and evaluate ideas",
+        "sentence1": "You must use",
+        "sentence2": "when solving complex problems."
+      },
+      {
+        "word": "presentation",
+        "translation": "презентація",
+        "definition": "a spoken or visual talk on a topic",
+        "sentence1": "The final",
+        "sentence2": "was about climate change and lasted 20 minutes."
+      }
+    ]
+  }
+  {
+    "name": "Weather 1",
+    "title": "Talking About the Weather",
+    "text": "Tom is obsessed with the weather. Every morning, he checks the forecast and writes down the temperature. He dreams of becoming a meteorologist. He likes all types of weather — sunny, cloudy, even rainy. In winter, he goes outside to photograph snowy landscapes. He wears a thick coat and warm boots. In summer, he puts on sunglasses and enjoys hot, dry afternoons. Last year, he visited Scotland, where the weather changed quickly. One minute it was windy, the next foggy. He learned how important weather is for travel, farming, and safety. Tom believes each season brings something special, and understanding the weather helps us connect with nature.",
+    "words": [
+      {
+        "word": "weather",
+        "translation": "погода",
+        "definition": "daily conditions of the atmosphere",
+        "sentence1": "The",
+        "sentence2": "changes almost every day."
+      },
+      {
+        "word": "forecast",
+        "translation": "прогноз погоди",
+        "definition": "a report predicting future weather",
+        "sentence1": "The",
+        "sentence2": "said it would be cold and wet tomorrow."
+      },
+      {
+        "word": "temperature",
+        "translation": "температура",
+        "definition": "the degree of heat or cold in the air",
+        "sentence1": "In summer, the",
+        "sentence2": "can rise above 35°C."
+      },
+      {
+        "word": "sunny",
+        "translation": "сонячний",
+        "definition": "full of sun and light",
+        "sentence1": "It’s too warm for a jacket today — the weather is really",
+        "sentence2": "."
+      },
+      {
+        "word": "cloudy",
+        "translation": "похмурий",
+        "definition": "cloudy and dark, no sunshine",
+        "sentence1": "It might rain — the sky looks very",
+        "sentence2": "."
+      },
+      {
+        "word": "rainy",
+        "translation": "дощовий",
+        "definition": "when water falls from the sky",
+        "sentence1": "Children love jumping in puddles on",
+        "sentence2": "days."
+      },
+      {
+        "word": "snowy",
+        "translation": "сніжний",
+        "definition": "falling frozen white flakes",
+        "sentence1": "Skiing is my favorite activity when it’s cold and",
+        "sentence2": "."
+      },
+      {
+        "word": "hot",
+        "translation": "спекотний",
+        "definition": "warm and often uncomfortable",
+        "sentence1": "It’s",
+        "sentence2": "outside — don’t forget water."
+      },
+      {
+        "word": "dry",
+        "translation": "сухий",
+        "definition": "not wet or humid",
+        "sentence1": "The Sahara is one of the most",
+        "sentence2": "places on Earth."
+      },
+      {
+        "word": "windy",
+        "translation": "вітряний",
+        "definition": "strong movement of air",
+        "sentence1": "My hair gets messy every time it’s",
+        "sentence2": "outside."
+      },
+      {
+        "word": "foggy",
+        "translation": "туманний",
+        "definition": "cloudy air near the ground, hard to see through",
+        "sentence1": "When it’s",
+        "sentence2": ", it’s hard to see the road while driving."
+      },
+      {
+        "word": "coat",
+        "translation": "зимовий плащ",
+        "definition": "a clothing item to keep warm in winter",
+        "sentence1": "A warm",
+        "sentence2": "is essential in winter."
+      },
+      {
+        "word": "sunglasses",
+        "translation": "сонцезахисні окуляри",
+        "definition": "protective glasses worn in bright light",
+        "sentence1": "I always wear my",
+        "sentence2": "when the sun is bright."
+      },
+      {
+        "word": "season",
+        "translation": "сезон",
+        "definition": "a period of the year with its own climate (e.g. winter)",
+        "sentence1": "Spring is my favorite",
+        "sentence2": "because everything starts to bloom."
+      },
+      {
+        "word": "nature",
+        "translation": "природа",
+        "definition": "natural world including plants and animals",
+        "sentence1": "I love walking in the forest and enjoying the beauty of",
+        "sentence2": "."
+      }
+    ]
+  },
+  {
+    "name": "Programming 1",
+    "title": "Getting Started with Programming",
+    "text": "Sasha started learning programming during lockdown. At first, she just wanted to build a website. But then she discovered Python and became fascinated by code. She watched tutorials, built functions, created variables, and made her first app. She used if-statements, loops, and even worked with databases. When she got stuck, she searched online or asked other developers. She also joined a forum and learned how to debug a tricky bug. Her favorite part? Designing the user interface so people could interact easily. Now she’s learning JavaScript to build more advanced features. She says coding isn’t about knowing everything — it’s about using logic and creativity to solve problems.",
+    "words": [
+      {
+        "word": "programming",
+        "translation": "програмування",
+        "definition": "writing instructions to make a computer do something",
+        "sentence1": "I started learning",
+        "sentence2": "because I wanted to build websites."
+      },
+      {
+        "word": "code",
+        "translation": "код",
+        "definition": "instructions written for a computer to follow",
+        "sentence1": "I love writing clear and simple",
+        "sentence2": "that others can read."
+      },
+      {
+        "word": "function",
+        "translation": "функція",
+        "definition": "a reusable block of code that does something",
+        "sentence1": "A good developer always tests each",
+        "sentence2": "before launching the project."
+      },
+      {
+        "word": "variable",
+        "translation": "змінна",
+        "definition": "a named storage for data like a number or text",
+        "sentence1": "A(n)",
+        "sentence2": "lets you store different values like names or numbers."
+      },
+      {
+        "word": "bug",
+        "translation": "баг / помилка",
+        "definition": "an error or problem in your code",
+        "sentence1": "My code didn’t work — there was a small",
+        "sentence2": "in line 23."
+      },
+      {
+        "word": "debugging",
+        "translation": "відлагодження",
+        "definition": "fixing problems in the code",
+        "sentence1": "We spent hours",
+        "sentence2": "to find out why the form didn’t submit."
+      },
+      {
+        "word": "loop",
+        "translation": "цикл",
+        "definition": "repeating an action until a condition is met",
+        "sentence1": "I used a simple",
+        "sentence2": "to repeat the same action 10 times."
+      },
+      {
+        "word": "if-statement",
+        "translation": "умовне твердження (if)",
+        "definition": "a decision-making part of code",
+        "sentence1": "If the password is correct, the",
+        "sentence2": "runs the login screen."
+      },
+      {
+        "word": "database",
+        "translation": "база даних",
+        "definition": "a place to store and manage data",
+        "sentence1": "We store all the user data in a secure",
+        "sentence2": "."
+      },
+      {
+        "word": "Python",
+        "translation": "мова Python",
+        "definition": "a popular programming language for many purposes",
+        "sentence1": "In this course, we use",
+        "sentence2": "to build backend applications."
+      },
+      {
+        "word": "JavaScript",
+        "translation": "мова JavaScript",
+        "definition": "a language for websites and interactivity",
+        "sentence1": "You can build interactive websites using",
+        "sentence2": "."
+      },
+      {
+        "word": "user interface",
+        "translation": "користувацький інтерфейс",
+        "definition": "the visible part of a program users interact with",
+        "sentence1": "A good",
+        "sentence2": "makes a program easy to use for people."
+      },
+      {
+        "word": "logic",
+        "translation": "логіка",
+        "definition": "thinking clearly and solving problems step by step",
+        "sentence1": "I enjoy solving problems using",
+        "sentence2": "and creativity."
+      },
+      {
+        "word": "developer",
+        "translation": "розробник",
+        "definition": "someone who writes code professionally",
+        "sentence1": "My friend is a mobile",
+        "sentence2": "— she created a fitness tracker."
+      },
+      {
+        "word": "app",
+        "translation": "застосунок (додаток)",
+        "definition": "a program designed for phones, tablets, or web",
+        "sentence1": "Every app is made up of many parts: buttons, screens, and",
+        "sentence2": "."
+      }
+    ]
+  }
+  {
+    "name": "Fashion 2",
+    "title": "Timeless Style and Modern Fashion",
+    "text": "Nora works as a fashion writer. Every season, she attends fashion weeks to report on new collections. She interviews designers, photographs the runway, and explores how trends change. This year, she noticed a return to timeless pieces — neutral colors, simple textures, and classic patterns. Many brands focused on ethical production and recycling. Accessories like scarves, belts, and jewelry added character to every outfit. Nora believes that fashion is more than clothes. It’s about storytelling. It’s how people express identity, values, and history through what they wear.",
+    "words": [
+      {
+        "word": "fashion",
+        "translation": "мода",
+        "definition": "the industry and culture of clothing and style",
+        "sentence1": "I love",
+        "sentence2": ", but I try to shop from small, ethical labels."
+      },
+      {
+        "word": "designer",
+        "translation": "дизайнер",
+        "definition": "a person who creates clothing or accessories",
+        "sentence1": "He studied to become a",
+        "sentence2": "and now creates his own clothing line."
+      },
+      {
+        "word": "fashion week",
+        "translation": "тиждень моди",
+        "definition": "shows of new clothing by top brands",
+        "sentence1": "At Paris",
+        "sentence2": ", top brands show their latest ideas."
+      },
+      {
+        "word": "collection",
+        "translation": "колекція",
+        "definition": "a group of clothes shown as one set",
+        "sentence1": "The new spring",
+        "sentence2": "features pastel colors and light fabrics."
+      },
+      {
+        "word": "runway",
+        "translation": "подіум",
+        "definition": "the long stage where models walk during fashion shows",
+        "sentence1": "They walked down the",
+        "sentence2": "wearing dramatic black coats."
+      },
+      {
+        "word": "trend",
+        "translation": "тренд",
+        "definition": "the current popular style or look",
+        "sentence1": "This year’s biggest",
+        "sentence2": "is wearing sneakers with formal clothes."
+      },
+      {
+        "word": "timeless",
+        "translation": "вічний / поза часом",
+        "definition": "not affected by time, always in style",
+        "sentence1": "I prefer a",
+        "sentence2": "look — something that never goes out of style."
+      },
+      {
+        "word": "texture",
+        "translation": "текстура",
+        "definition": "something that feels rough, soft, smooth, etc.",
+        "sentence1": "His clothes mix smooth and rough",
+        "sentence2": "for a unique feel."
+      },
+      {
+        "word": "pattern",
+        "translation": "візерунок",
+        "definition": "repeated design (like stripes or flowers)",
+        "sentence1": "This bag has a lovely floral",
+        "sentence2": "that matches the dress."
+      },
+      {
+        "word": "scarf",
+        "translation": "шарф",
+        "definition": "a stylish cloth worn around the neck",
+        "sentence1": "A checked",
+        "sentence2": "can make a simple outfit feel complete."
+      },
+      {
+        "word": "belt",
+        "translation": "пояс",
+        "definition": "a strap worn around the waist",
+        "sentence1": "Her wide leather",
+        "sentence2": "makes her waist look smaller."
+      },
+      {
+        "word": "jewelry",
+        "translation": "прикраса / коштовність",
+        "definition": "shiny or decorative items worn for beauty",
+        "sentence1": "She always wears one special",
+        "sentence2": "— a gold necklace from her grandmother."
+      },
+      {
+        "word": "accessory",
+        "translation": "аксесуар",
+        "definition": "an item added to improve appearance or function",
+        "sentence1": "A bright red handbag is her favorite",
+        "sentence2": "."
+      },
+      {
+        "word": "recycling",
+        "translation": "переробка (рециклінг)",
+        "definition": "using old materials to create new products",
+        "sentence1": "This jacket is made from old jeans as part of a",
+        "sentence2": "project."
+      },
+      {
+        "word": "ethical",
+        "translation": "етичний",
+        "definition": "actions and products made with fairness and care",
+        "sentence1": "More brands now focus on",
+        "sentence2": "production, not harming people or the planet."
+      }
+    ]
+  },
+  {
+    "name": "Finance 1",
+    "title": "Smart with Money: Understanding Finance",
+    "text": "Oleh never thought much about finance — until he moved out. Suddenly, he had to track his income, control his expenses, and stick to a budget. He opened a bank account, started a savings plan, and used apps to manage money. He learned that credit cards offer convenience, but also bring interest and debt. Now he reads about stocks, investments, and real estate. His friend even explained financial literacy — how to make smart decisions with money. Oleh still enjoys small treats, but now he understands the value of planning. Finance, he says, is about freedom and peace of mind.",
+    "words": [
+      {
+        "word": "finance",
+        "translation": "фінанси",
+        "definition": "financial system or study of money management",
+        "sentence1": "",
+        "sentence2": "is about freedom and peace of mind."
+      },
+      {
+        "word": "income",
+        "translation": "прибуток / дохід",
+        "definition": "money received (e.g. from a job)",
+        "sentence1": "His",
+        "sentence2": "comes from a part-time job and tutoring."
+      },
+      {
+        "word": "expenses",
+        "translation": "витрати",
+        "definition": "total cost of things you spend money on",
+        "sentence1": "I track my",
+        "sentence2": "in a spreadsheet to see where my money goes."
+      },
+      {
+        "word": "budget",
+        "translation": "бюджет",
+        "definition": "organized money plan for spending and saving",
+        "sentence1": "He created a monthly",
+        "sentence2": "to avoid overspending."
+      },
+      {
+        "word": "bank",
+        "translation": "банк",
+        "definition": "a financial institution for holding money",
+        "sentence1": "Maria opened a",
+        "sentence2": "account to keep her money safe."
+      },
+      {
+        "word": "savings",
+        "translation": "заощадження",
+        "definition": "small amounts of money kept for the future",
+        "sentence1": "We started putting money into",
+        "sentence2": "for emergencies."
+      },
+      {
+        "word": "credit card",
+        "translation": "кредитна картка",
+        "definition": "borrowing tool that lets you buy now, pay later",
+        "sentence1": "They used a",
+        "sentence2": "to buy a laptop and paid it off in three months."
+      },
+      {
+        "word": "interest",
+        "translation": "відсоток (на кредит)",
+        "definition": "extra money you pay when you borrow money",
+        "sentence1": "They took out a loan with 8%",
+        "sentence2": "."
+      },
+      {
+        "word": "debt",
+        "translation": "борг",
+        "definition": "money you owe to others or institutions",
+        "sentence1": "It's easy to fall into",
+        "sentence2": "if you spend more than you earn."
+      },
+      {
+        "word": "stocks",
+        "translation": "акції",
+        "definition": "parts of a company you can buy and trade",
+        "sentence1": "You can lose or gain money when buying and selling",
+        "sentence2": "."
+      },
+      {
+        "word": "investment",
+        "translation": "інвестиція",
+        "definition": "putting money into something to earn more later",
+        "sentence1": "I made my first",
+        "sentence2": "in a company that makes solar panels."
+      },
+      {
+        "word": "real estate",
+        "translation": "нерухомість",
+        "definition": "owning buildings or land as an investment",
+        "sentence1": "Buying an apartment is considered a long-term",
+        "sentence2": "."
+      },
+      {
+        "word": "financial literacy",
+        "translation": "фінансова грамотність",
+        "definition": "knowledge about how to use and manage money",
+        "sentence1": "She’s learning about",
+        "sentence2": "so she can manage her future well."
+      },
+      {
+        "word": "money",
+        "translation": "гроші",
+        "definition": "general word for cash, coins, currency",
+        "sentence1": "Learning how to manage",
+        "sentence2": "should be taught in every school."
+      },
+      {
+        "word": "plan",
+        "translation": "план",
+        "definition": "a detailed future goal for money use",
+        "sentence1": "We sat down together and made a financial",
+        "sentence2": "for the next year."
+      }
+    ]
+  }
+  {
+    "name": "Politics 1",
+    "title": "Voices of Change: Understanding Politics Today",
+    "text": "In her final year of university, Daria took a course on politics. She learned how governments work, who creates laws, and how elections are organized. They discussed the role of presidents, parliaments, and ministers. The class often debated freedom, rights, taxes, and public responsibility. Daria was especially interested in democracy and how citizens can create change. One day, she joined a peaceful protest for climate action. Now she reads political news daily and encourages friends to vote. Politics, she believes, isn’t boring — it’s how we shape the world we live in.",
+    "words": [
+      {
+        "word": "politics",
+        "translation": "політика",
+        "definition": "activities related to governing a country or area",
+        "sentence1": "Many young people are getting interested in",
+        "sentence2": "and civic life."
+      },
+      {
+        "word": "government",
+        "translation": "уряд",
+        "definition": "the group of people who control a country",
+        "sentence1": "The",
+        "sentence2": "plays an important role in running the country."
+      },
+      {
+        "word": "law",
+        "translation": "закон",
+        "definition": "a rule made by a government",
+        "sentence1": "The new",
+        "sentence2": "was passed to protect online privacy."
+      },
+      {
+        "word": "election",
+        "translation": "вибори",
+        "definition": "an event where people vote to choose leaders",
+        "sentence1": "In a",
+        "sentence2": ", people choose their leaders by voting."
+      },
+      {
+        "word": "president",
+        "translation": "президент",
+        "definition": "the leader of a country",
+        "sentence1": "The",
+        "sentence2": "gave a speech about education reform."
+      },
+      {
+        "word": "parliament",
+        "translation": "парламент",
+        "definition": "a group of people who make laws",
+        "sentence1": "The",
+        "sentence2": "creates and changes national laws."
+      },
+      {
+        "word": "minister",
+        "translation": "міністр",
+        "definition": "a government official in charge of a department",
+        "sentence1": "My uncle is a",
+        "sentence2": "— he manages health care for the country."
+      },
+      {
+        "word": "citizen",
+        "translation": "громадянин",
+        "definition": "someone who belongs to a country and has rights",
+        "sentence1": "She became a",
+        "sentence2": "last year and voted for the first time."
+      },
+      {
+        "word": "right",
+        "translation": "право",
+        "definition": "a legal or natural ability to do something",
+        "sentence1": "Every adult has the",
+        "sentence2": "to express their opinion."
+      },
+      {
+        "word": "freedom",
+        "translation": "свобода",
+        "definition": "the ability to act or speak freely",
+        "sentence1": "In some places,",
+        "sentence2": "is limited, and people can’t speak freely."
+      },
+      {
+        "word": "tax",
+        "translation": "податок",
+        "definition": "money paid to the government for public services",
+        "sentence1": "Our government collects money from workers through income",
+        "sentence2": "."
+      },
+      {
+        "word": "protest",
+        "translation": "протест",
+        "definition": "a public show of disagreement or demand for change",
+        "sentence1": "Students organized a peaceful",
+        "sentence2": "about environmental issues."
+      },
+      {
+        "word": "democracy",
+        "translation": "демократія",
+        "definition": "a system where people vote for their leaders",
+        "sentence1": "People showed support for the",
+        "sentence2": "by putting signs in their windows."
+      },
+      {
+        "word": "responsibility",
+        "translation": "обов’язок",
+        "definition": "something you should do because it is right",
+        "sentence1": "In many countries, voting is not just a right, it's a",
+        "sentence2": "."
+      },
+      {
+        "word": "vote",
+        "translation": "голосувати",
+        "definition": "to choose someone or something in an election",
+        "sentence1": "You must register to",
+        "sentence2": "before the deadline."
+      }
+    ]
+  },
+  {
+    "name": "Animals 1",
+    "title": "Caring for Pets and Wild Animals",
+    "text": "Ihor volunteers at an animal shelter. Every morning, he feeds the cats, walks the dogs, and checks on the hamsters. He loves spending time with pets, but he also cares deeply about wild animals. He once travelled to Kenya and saw zebras and penguins in nature reserves. Back home, he teaches children about endangered species and the importance of conservation. He believes every animal, whether it’s a farm animal like a cow or a chicken, deserves care and respect.",
+    "words": [
+      {
+        "word": "animal",
+        "translation": "тварина",
+        "definition": "a living thing that moves and breathes",
+        "sentence1": "Dogs are often called the most loyal",
+        "sentence2": "."
+      },
+      {
+        "word": "cat",
+        "translation": "кіт",
+        "definition": "a furry animal that meows",
+        "sentence1": "A lost",
+        "sentence2": "was found and returned to its owner."
+      },
+      {
+        "word": "dog",
+        "translation": "собака",
+        "definition": "a four-legged pet known for loyalty",
+        "sentence1": "I’ve always wanted a pet as a friend — especially a",
+        "sentence2": "."
+      },
+      {
+        "word": "hamster",
+        "translation": "хом’як",
+        "definition": "a small pet that runs in a wheel",
+        "sentence1": "She has a small",
+        "sentence2": "that runs in a wheel all day."
+      },
+      {
+        "word": "pet",
+        "translation": "домашній улюбленець",
+        "definition": "a friendly animal kept at home",
+        "sentence1": "Our family adopted a",
+        "sentence2": "from the local shelter."
+      },
+      {
+        "word": "wild animal",
+        "translation": "дика тварина",
+        "definition": "an animal living freely in nature",
+        "sentence1": "Tigers, lions, and bears are examples of a",
+        "sentence2": "."
+      },
+      {
+        "word": "zebra",
+        "translation": "зебра",
+        "definition": "a striped wild animal from Africa",
+        "sentence1": "A",
+        "sentence2": "has stripes and lives in Africa."
+      },
+      {
+        "word": "penguin",
+        "translation": "пінгвін",
+        "definition": "a black and white bird that slides on ice",
+        "sentence1": "During our trip to Antarctica, we saw a",
+        "sentence2": "slide on the ice."
+      },
+      {
+        "word": "endangered species",
+        "translation": "зникаючий вид",
+        "definition": "animals at risk of disappearing",
+        "sentence1": "Many",
+        "sentence2": "like elephants and rhinos are at risk of extinction."
+      },
+      {
+        "word": "conservation",
+        "translation": "збереження природи",
+        "definition": "protecting animals and nature",
+        "sentence1": "They support",
+        "sentence2": "efforts to protect animals in the wild."
+      },
+      {
+        "word": "farm animal",
+        "translation": "фермерська тварина",
+        "definition": "an animal raised on a farm",
+        "sentence1": "The farmer takes care of many",
+        "sentence2": "like sheep and goats."
+      },
+      {
+        "word": "cow",
+        "translation": "корова",
+        "definition": "a large farm animal that gives milk",
+        "sentence1": "The children visited a farm and saw a",
+        "sentence2": "being milked."
+      },
+      {
+        "word": "chicken",
+        "translation": "курка",
+        "definition": "a farm bird that lays eggs",
+        "sentence1": "My grandmother keeps",
+        "sentence2": "in her backyard for eggs."
+      },
+      {
+        "word": "shelter",
+        "translation": "притулок",
+        "definition": "a place that protects homeless animals",
+        "sentence1": "Our family adopted a cat from the local",
+        "sentence2": "."
+      },
+      {
+        "word": "nature",
+        "translation": "природа",
+        "definition": "forests, rivers, and the natural world",
+        "sentence1": "A healthy planet needs clean air, water, and safe",
+        "sentence2": "for animals."
+      }
+    ]
+  }
+  {
+    "name": "University 1",
+    "title": "Campus Days: Life at University",
+    "text": "Anya studies biology at university. Her schedule is packed with lectures, labs, and late-night study sessions. She lives in a shared dormitory on campus and has made friends through student clubs. Tuition isn’t cheap, so she works a part-time job and applies for scholarships. She’s writing a final essay for her degree and preparing for exams. Despite the pressure, Anya enjoys her university life. It’s helping her build independence, responsibility, and skills she’ll use long after graduation.",
+    "words": [
+      {
+        "word": "university",
+        "translation": "університет",
+        "definition": "a place of higher learning after high school",
+        "sentence1": "He hopes to study abroad next year at a different",
+        "sentence2": "."
+      },
+      {
+        "word": "lecture",
+        "translation": "лекція",
+        "definition": "a regular class where a teacher explains a topic",
+        "sentence1": "Every Friday, we have a long",
+        "sentence2": "in history."
+      },
+      {
+        "word": "study",
+        "translation": "навчатися",
+        "definition": "to prepare and learn for school or exams",
+        "sentence1": "Our next exam is on Monday, so I need to",
+        "sentence2": "this weekend."
+      },
+      {
+        "word": "exam",
+        "translation": "іспит",
+        "definition": "a test of knowledge, often at the end of a term",
+        "sentence1": "Our next",
+        "sentence2": "is on Monday, so I need to study this weekend."
+      },
+      {
+        "word": "essay",
+        "translation": "есе",
+        "definition": "a written assignment that explores a topic",
+        "sentence1": "I’m writing an",
+        "sentence2": "about global warming for English class."
+      },
+      {
+        "word": "dormitory",
+        "translation": "гуртожиток",
+        "definition": "where students live while studying",
+        "sentence1": "She was excited to move into the",
+        "sentence2": "and meet her roommates."
+      },
+      {
+        "word": "campus",
+        "translation": "університетське містечко",
+        "definition": "the place where university buildings are located",
+        "sentence1": "We often meet in the",
+        "sentence2": "café between classes."
+      },
+      {
+        "word": "student club",
+        "translation": "студентський клуб",
+        "definition": "an organized activity group for students",
+        "sentence1": "I joined a",
+        "sentence2": "for photography and made lots of friends."
+      },
+      {
+        "word": "part-time job",
+        "translation": "часткова зайнятість",
+        "definition": "work done during free hours while still studying",
+        "sentence1": "Many students work a",
+        "sentence2": "to help pay their tuition."
+      },
+      {
+        "word": "tuition",
+        "translation": "плата за навчання",
+        "definition": "money paid for education",
+        "sentence1": "Many students work a part-time job to help pay their",
+        "sentence2": "."
+      },
+      {
+        "word": "degree",
+        "translation": "диплом, ступінь",
+        "definition": "a degree earned after completing university study",
+        "sentence1": "After four years of hard work, he finally earned his",
+        "sentence2": "."
+      },
+      {
+        "word": "independence",
+        "translation": "самостійність",
+        "definition": "being able to live and decide things on your own",
+        "sentence1": "Living alone teaches you",
+        "sentence2": "and how to manage your time."
+      },
+      {
+        "word": "responsibility",
+        "translation": "відповідальність",
+        "definition": "something you are expected to do or manage well",
+        "sentence1": "Taking care of meals and money is part of adult",
+        "sentence2": "."
+      },
+      {
+        "word": "scholarship",
+        "translation": "стипендія",
+        "definition": "money given to students to support their studies",
+        "sentence1": "She received a full",
+        "sentence2": "because of her excellent grades."
+      },
+      {
+        "word": "lab",
+        "translation": "лабораторія",
+        "definition": "a room or building used for scientific experiments",
+        "sentence1": "Chemistry students spend hours each week in the",
+        "sentence2": "."
+      }
+    ]
+  },
+  {
+    "name": "Health 1",
+    "title": "Whole-Body Wellness: Building a Healthy Life",
+    "text": "Mark got sick last year, and it changed how he sees health. He now eats more vegetables, drinks water, and exercises regularly. He goes to the doctor for check-ups, takes medicine when needed, and gets his vaccines on time. But he also learned that mental health matters. He talked to a therapist when he felt anxious, and now practices relaxation to deal with stress. He keeps good hygiene habits, avoids too much sugar and fat, and believes in balance. For him, being healthy means caring for your whole self — body and mind.",
+    "words": [
+      {
+        "word": "health",
+        "translation": "здоров’я",
+        "definition": "a general state of physical and mental well-being",
+        "sentence1": "She believes that",
+        "sentence2": "is not just about the body but also about the mind."
+      },
+      {
+        "word": "doctor",
+        "translation": "лікар",
+        "definition": "a professional who helps people stay well or recover",
+        "sentence1": "She goes to the",
+        "sentence2": "once a year for a full check-up."
+      },
+      {
+        "word": "check-up",
+        "translation": "огляд",
+        "definition": "a medical visit to see if you're healthy",
+        "sentence1": "She goes to the doctor once a year for a full",
+        "sentence2": "."
+      },
+      {
+        "word": "medicine",
+        "translation": "ліки",
+        "definition": "pills or syrup that help treat illness",
+        "sentence1": "After the flu, the doctor gave him some",
+        "sentence2": "to recover faster."
+      },
+      {
+        "word": "vaccine",
+        "translation": "вакцина",
+        "definition": "an injection that protects against disease",
+        "sentence1": "A",
+        "sentence2": "helps your body fight dangerous viruses."
+      },
+      {
+        "word": "mental health",
+        "translation": "психічне здоров’я",
+        "definition": "emotional and psychological well-being",
+        "sentence1": "Sleep, nutrition, and calm help maintain good",
+        "sentence2": "."
+      },
+      {
+        "word": "stress",
+        "translation": "стрес",
+        "definition": "unwanted emotional pressure or worry",
+        "sentence1": "Stress is often caused by work overload or too much noise.",
+        "sentence2": ""
+      },
+      {
+        "word": "anxiety",
+        "translation": "тривожність",
+        "definition": "low or nervous emotional condition",
+        "sentence1": "He had",
+        "sentence2": "before his public speech and felt nervous."
+      },
+      {
+        "word": "hygiene",
+        "translation": "гігієна",
+        "definition": "good habits like handwashing and cleanliness",
+        "sentence1": "Clean hands and proper",
+        "sentence2": "prevent many illnesses."
+      },
+      {
+        "word": "sugar",
+        "translation": "цукор",
+        "definition": "sweet substance found in candy and soda",
+        "sentence1": "Some snacks are full of",
+        "sentence2": "and should be eaten less often."
+      },
+      {
+        "word": "fat",
+        "translation": "жир",
+        "definition": "substance in fried or processed foods",
+        "sentence1": "Fast food often contains too much",
+        "sentence2": ", which can be harmful."
+      },
+      {
+        "word": "vegetables",
+        "translation": "овочі",
+        "definition": "a nutrient from plants like broccoli and lettuce",
+        "sentence1": "Eating",
+        "sentence2": "like carrots and spinach helps your body stay strong."
+      },
+      {
+        "word": "exercise",
+        "translation": "вправи",
+        "definition": "moving your body to improve health",
+        "sentence1": "Regular",
+        "sentence2": "like walking or cycling keeps your heart healthy."
+      },
+      {
+        "word": "water",
+        "translation": "вода",
+        "definition": "clear liquid your body needs to stay hydrated",
+        "sentence1": "It’s important to drink enough",
+        "sentence2": "during the day, especially in summer."
+      },
+      {
+        "word": "balance",
+        "translation": "баланс",
+        "definition": "the right amount of work, rest, food, and activity",
+        "sentence1": "You should always look for",
+        "sentence2": "in what you eat and how you live."
+      }
+    ]
+  }
 ]`
 }

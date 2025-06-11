@@ -25,7 +25,7 @@ export class AuthService {
         const userDocRef = doc(this.firestore, 'users', userCredential.user.uid);
 
         const storage = getStorage();
-        const backgroundUrl = await getDownloadURL(ref(storage, 'avatar/backgrounds/b_blue.PNG'));
+        const backgroundUrl = await getDownloadURL(ref(storage, 'avatar/backgrounds/b_green.PNG'));
         const skinUrl = await getDownloadURL(ref(storage, 'avatar/skintones/s_default.PNG'));
 
         const defaultUserData = {
