@@ -18,10 +18,14 @@
 
     <div class="avatar-options">
       <ng-container *ngIf="options() as options">
-        <img *ngFor="let option of options | async"
-             [src]="option"
-             (click)="select(option)"
-             class="profile-avatar-option" alt="">
+        <ng-container *ngFor="let option of options | async">
+          <img
+            [src]="option"
+            (click)="select(option)"
+            class="profile-avatar-option" alt="">
+          <p [class.visible]="!userService.unlocks().includes(option)">10 <img src="assets/prizes/coin.PNG" alt=""></p>
+        </ng-container>
+
       </ng-container>
     </div>
   </div>

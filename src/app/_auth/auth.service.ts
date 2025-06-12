@@ -1,11 +1,19 @@
-import { Injectable, signal, computed, effect } from '@angular/core';
-import { Auth, onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile, signOut, User } from '@angular/fire/auth';
-import { Firestore, doc, setDoc } from '@angular/fire/firestore';
-import { getStorage, ref } from 'firebase/storage';
-import { from, switchMap } from 'rxjs';
+import {Injectable, signal, computed, effect} from '@angular/core';
+import {
+  Auth,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  updateProfile,
+  signOut,
+  User
+} from '@angular/fire/auth';
+import {Firestore, doc, setDoc} from '@angular/fire/firestore';
+import {getStorage, ref} from 'firebase/storage';
+import {from, switchMap} from 'rxjs';
 import {getDownloadURL} from '@angular/fire/storage';
 
-@Injectable({ providedIn: 'root' })
+@Injectable({providedIn: 'root'})
 export class AuthService {
   private userSignal = signal<User | null | undefined>(undefined); // undefined: loading, null: not logged in
   readonly user = computed(() => this.userSignal());
@@ -19,7 +27,7 @@ export class AuthService {
   signUp(email: string, password: string, name: string) {
     return from(createUserWithEmailAndPassword(this.auth, email, password)).pipe(
       switchMap(userCredential =>
-        updateProfile(userCredential.user, { displayName: name }).then(() => userCredential)
+        updateProfile(userCredential.user, {displayName: name}).then(() => userCredential)
       ),
       switchMap(async userCredential => {
         const userDocRef = doc(this.firestore, 'users', userCredential.user.uid);
@@ -27,17 +35,23 @@ export class AuthService {
         const storage = getStorage();
         const backgroundUrl = await getDownloadURL(ref(storage, 'avatar/backgrounds/b_green.PNG'));
         const skinUrl = await getDownloadURL(ref(storage, 'avatar/skintones/s_default.PNG'));
+        const eyesUrl = await getDownloadURL(ref(storage, 'avatar/eyes/eyes_1_1.PNG'));
 
         const defaultUserData = {
           name: name,
           avatar: {
             background: backgroundUrl.toString(),
             skin: skinUrl.toString(),
-            eyes: '',
+            eyes: eyesUrl.toString(),
             clothes: '',
             accessories: ''
           },
-          unlocks: []
+          unlocks: [
+            backgroundUrl.toString(),
+            skinUrl.toString(),
+            eyesUrl.toString()
+          ],
+          currency: 0
         };
 
         return from(setDoc(userDocRef, defaultUserData)).pipe(

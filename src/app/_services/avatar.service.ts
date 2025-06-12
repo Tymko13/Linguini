@@ -15,13 +15,6 @@ export class AvatarService {
   clothes: Observable<string[]>;
   accessories: Observable<string[]>;
 
-  async getBackgrounds() {
-    const bgRef = ref(this.storage, 'avatar/backgrounds/');
-    return from(listAll(bgRef).then(listResults =>
-      Promise.all(listResults.items.map(item => getDownloadURL(item)))
-    ));
-  }
-
   constructor() {
     const skinsRef = ref(this.storage, 'avatar/skintones/');
     this.skintones = from(listAll(skinsRef).then(listResults =>

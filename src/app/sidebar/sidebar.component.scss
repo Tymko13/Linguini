@@ -16,7 +16,7 @@
   cursor: pointer;
 }
 
-img {
+.avatar {
   position: absolute;
   top: 0;
   left: 0;
@@ -117,7 +117,12 @@ button.text-btn {
 P {
   color: $secondary-text;
   text-align: center;
-  font-size: 22px;
+  font-size: 2rem;
+
+  img {
+    aspect-ratio: 1/1;
+    height: 1.5rem;
+  }
 }
 
 .active {

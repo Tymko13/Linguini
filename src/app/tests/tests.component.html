@@ -1,1 +1,66 @@
-<p>tests works!</p>
+<div *ngIf="!testMode; else startTesting" class="content-wrapper">
+  <div class="levels-wrapper">
+    <div (click)="startTest(getAllWords(), 'all')" class="float-panel highlighted level-btn hover"
+         style="margin-bottom: 1rem;">
+      All levels
+    </div>
+    <div *ngFor="let topic of userTopics(); let i = index" class="level">
+      <div (click)="startTest(topic['words'], topic['name'])" class="float-panel basic level-btn hover">
+        {{ topic.name }}
+      </div>
+      <div (click)="claimPrize(i, j, topic.name)" [class.available]="prizeAvailable(i, j)"
+           [class.claimed]="prizeAchieved(i, j)" *ngFor="let prize of prizes; let j = index"
+           class="float-panel basic prize hover">
+        <img [src]="cup(prize)" [alt]="prize + ' cup'">
+        <img *ngIf="prizeAchieved(i, j)" class="done" src="assets/prizes/done.PNG" [alt]="prize + ' cup done'">
+      </div>
+    </div>
+  </div>
+  <div class="battle-pas-wrapper"></div>
+</div>
+<ng-template #startTesting>
+  <div class="test-wrapper">
+    <div class="progress-wrapper">
+      <div *ngFor="let word of testWords"></div>
+    </div>
+    <ng-container *ngFor="let word of testWords; let i = index">
+      <div class="float-panel basic test" *ngIf="testTypeNames![i]==='translation'">
+        <h2 class="title-regular">{{i+1}}. What is the translation of <b>{{word.word}}</b>?</h2>
+        <div [class.disappear]="disappear(i)" class="options">
+          <button [class.answer]="definition===word.translation"
+                  (click)="submitAnswer(definition, word.translation, i)"
+                  *ngFor="let definition of testTypes![i]"
+                  class="basic-btn option">
+            {{definition}}
+          </button>
+        </div>
+        <p *ngIf="testAnswers![i] !== 0">{{word.translation}} <b [class.wrong]="testAnswers![i]===-1">{{testAnswers![i]===1 ? '✔' : '✖'}}</b></p>
+      </div>
+      <div class="float-panel basic test" *ngIf="testTypeNames![i]==='definition'">
+        <h2 class="title-regular">{{i+1}}. What is the definition of <b>{{word.word}}</b>?</h2>
+        <div [class.disappear]="disappear(i)" class="options">
+          <button [class.answer]="definition===word.definition"
+                  (click)="submitAnswer(definition, word.definition, i)"
+                  *ngFor="let definition of testTypes![i]"
+                  class="basic-btn option">
+            {{definition}}
+          </button>
+        </div>
+        <p *ngIf="testAnswers![i] !== 0">{{word.definition}} <b [class.wrong]="testAnswers![i]===-1">{{testAnswers![i]===1 ? '✔' : '✖'}}</b></p>
+
+      </div>
+      <div class="float-panel basic test" *ngIf="testTypeNames![i]==='sentence'">
+        <h2 class="title-regular">{{i+1}}. {{word.sentence1}} _____ {{word.sentence2}}</h2>
+        <div [class.disappear]="disappear(i)" class="options">
+          <button [class.answer]="definition===word.word"
+                  (click)="submitAnswer(definition, word.word, i)"
+                  *ngFor="let definition of testTypes![i]"
+                  class="basic-btn option">
+            {{definition}}
+          </button>
+        </div>
+        <p *ngIf="testAnswers![i] !== 0">{{word.word}} <b [class.wrong]="testAnswers![i]===-1">{{testAnswers![i]===1 ? '✔' : '✖'}}</b></p>
+      </div>
+    </ng-container>
+  </div>
+</ng-template>

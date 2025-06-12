@@ -4,6 +4,7 @@ import {NgForOf, NgIf} from '@angular/common';
 import {Topic} from '../_models/topic';
 import {UserService} from '../_services/user.service';
 import {Router} from '@angular/router';
+import {toSignal} from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-texts',
@@ -19,17 +20,18 @@ export class TextsComponent {
   userService = inject(UserService);
   router = inject(Router);
 
+  allTopics = toSignal(this.userService.topics());
   currentTopic = signal<Topic | null>(null);
 
   learn() {
     if(this.currentTopic()) {
-      this.userService.addWords(this.currentTopic()!);
+      this.userService.addTopic(this.currentTopic()!);
       this.router.navigate(['/tests']);
     }
   }
 
   disableLearning() {
-    const topics =  this.userService.topics();
-    return topics && topics.includes(this.currentTopic()?.name);
+    const topics =  this.allTopics();
+    return topics && topics.map(topic => topic.name).includes(this.currentTopic()?.name);
   }
 }

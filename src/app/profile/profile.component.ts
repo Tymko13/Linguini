@@ -67,8 +67,15 @@ export class ProfileComponent implements OnInit {
     }
   });
 
-  select(url: string) {
-    this.editedAvatar[this.selectedPart()] = url;
+  async select(url: string) {
+    if(this.userService.unlocks().includes(url)) {
+      this.editedAvatar[this.selectedPart()] = url;
+    } else {
+      if(await this.userService.changeCurrency(-10)) {
+        this.userService.unlock(url);
+        this.editedAvatar[this.selectedPart()] = url;
+      }
+    }
   }
 
   saveChanges() {

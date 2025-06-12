@@ -36,7 +36,6 @@ export class TranslateComponent {
       .pipe(debounceTime(500), takeUntil(this.destroy$))
       .subscribe((term) => {
         this.debouncedValue.set(term);
-        console.log('Debounced value:', term);
       });
     effect(() => {
       if(this.selectedWord()) {

@@ -2,10 +2,11 @@
   <ng-container *ngIf="(authService.user()) !== undefined; else loading">
     <ng-container *ngIf="authService.isLoggedIn(); else login;">
       <div class="img-wrapper" (click)="goToProfile()">
-        <img *ngFor="let url of userService.avatar()" [src]="url" alt="Avatar">
+        <img class="avatar" *ngFor="let url of userService.avatar()" [src]="url" alt="Avatar">
       </div>
 
       <h2>{{ userService.username()}}</h2>
+      <p><img src="assets/prizes/coin.PNG" alt="Coin"> {{userService.currency()}}</p>
       <nav>
         <button class="side-btn" routerLink="dictionary" routerLinkActive="active">Dictionary</button>
         <button class="side-btn" routerLink="texts" routerLinkActive="active">Texts</button>

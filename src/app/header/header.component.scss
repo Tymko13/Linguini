@@ -10,3 +10,8 @@ h1 {
   border-bottom: 0.1rem solid $primary-text;
   background-color: $secondary-basic;
 }
+
+.grey {
+  color: color.adjust($secondary-accent, $saturation: -20%, $lightness: -10%);
+}
+

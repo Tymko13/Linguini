@@ -1,0 +1,135 @@
+@use '../../assets/variables' as *;
+
+.content-wrapper {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem 2rem;
+  width: 100%;
+}
+
+.levels-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.battle-pas-wrapper {
+  flex: 1;
+}
+
+.level {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1rem;
+  width: 100%;
+  height: 5rem;
+}
+
+.level-btn {
+  font-size: 2rem;
+  width: 50%;
+
+  &::after {
+    content: "ㅤ\279C";
+    opacity: 0;
+    transition: opacity 0.1s ease-in;
+    position: absolute;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+}
+
+.hover {
+  &:hover {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  }
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+
+  &.claimed {
+    cursor: default;
+    box-shadow: none;
+  }
+
+  &.available {
+    background-color: #ccc;
+    box-shadow: none;
+    cursor: default;
+  }
+}
+
+.prize {
+  margin-left: 1rem;
+  aspect-ratio: 1 / 1;
+  max-height: 100%;
+  padding: 0.75rem;
+
+  img {
+    height: 100%;
+  }
+}
+
+.done {
+  z-index: 100;
+  position: relative;
+  bottom: 4rem;
+}
+
+.test-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 10rem;
+}
+
+.test {
+  margin-bottom: 1rem;
+
+  p {
+    font-size: 1.5rem;
+    margin: 0.5rem 1rem;
+    b {
+      color: $primary-accent;
+    }
+    .wrong {
+      color: $error;
+    }
+  }
+}
+
+.options {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  button {
+    transition: font-size 0.5s ease, height 0.5s ease, padding 0.5s ease;
+  }
+}
+
+b{
+  font-weight: bold;
+}
+
+.option {
+  font-size: 1.5rem;
+  transition: background-color 0.1s ease-out;
+  &:focus {
+    background-color: $error;
+    color: $secondary-text;
+  }
+
+  &.answer:focus {
+    background-color: $secondary-accent;
+  }
+}
+
+.disappear {
+  button {
+    font-size: 0;
+    height: 0;
+    padding: 0;
+  }
+}
+
